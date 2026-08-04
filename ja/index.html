@@ -35,7 +35,7 @@
     <a class="button" href="https://github.com/TKKRTKY/OpenMic/releases/latest">ダウンロード</a>
     <a class="button secondary" href="#how">仕組み</a>
   </div>
-  <p class="requirement">無料 · macOS 14.2 以降 · Apple silicon / Intel · Apple の署名・公証済み</p>
+  <p class="requirement">無料 · macOS 14.2 以降</p>
 </header>
 
 <main class="wrap">
@@ -92,9 +92,8 @@
   </p>
   <p>
     <strong>それでも動きません。</strong> 機器セットは音源を
-    <strong>別々のチャンネルに並べるだけ</strong>で（マイクが 1-2ch、ループバックが 3-4ch）、
-    合成はしません。ブラウザをはじめ多くのアプリは先頭 2 チャンネルしか読まないので、
-    届くのはマイクの音だけです。
+    <strong>並べるだけで合成しません</strong>。ブラウザをはじめ多くのアプリは
+    先頭のものしか聞かないので、届くのはマイクの音だけです。
   </p>
 
   <div class="scroller">
@@ -103,7 +102,7 @@
         <tr><th></th><th>Open Mic</th><th>ループバック＋機器セット</th></tr>
       </thead>
       <tbody>
-        <tr><td>1-2ch に合成音が来る</td><td class="yes">はい</td><td class="no">いいえ（別チャンネル）</td></tr>
+        <tr><td>実際に合成される</td><td class="yes">はい</td><td class="no">いいえ（並ぶだけ）</td></tr>
         <tr><td>ブラウザや一般的なアプリで使える</td><td class="yes">はい</td><td class="no">マイクのみ</td></tr>
         <tr><td>設定</td><td class="yes">入れて ON にするだけ</td><td class="no">複数出力＋機器セットを手作業</td></tr>
         <tr><td>出力デバイスを変更する必要</td><td class="yes">なし</td><td class="no">あり（必須）</td></tr>
@@ -113,9 +112,9 @@
   </div>
 
   <p>
-    向こうが優れている点もあります。実績があり、オープンソースで、
-    古い macOS でも動き、画面収録の権限も要りません。
-    Open Mic はそのぶん多くを要求する代わりに、この一点を自動でやります。
+    向こうは実績があり、オープンソースで、古い macOS でも動き、
+    要求する権限も少なくて済みます。音声を自由にルーティングしたいなら
+    そちらが適しています。Open Mic は 1 つのことを、設定なしでやります。
   </p>
 </section>
 
@@ -129,29 +128,27 @@
 
   <div class="note">
     <strong>2 つ目に驚かれると思うので先に書きます。Open Mic は画面を録画しません。</strong>
-    macOS ではシステム音声の取り込みが「画面収録」の権限に含まれており、
-    これ以外に要求する手段がありません。使っているのは Core Audio の
-    プロセスタップ API だけで、画面キャプチャの API には一切触れていません。
+    macOS がシステム音声の取り込みを「画面収録」に含めているためで、
+    これより狭い権限が用意されていないだけです。
   </div>
 
   <p>
-    どこにも送信しません。ネットワーク通信のコードが存在せず、
-    音声はメモリ上を通るだけでディスクにも書きません。
-    <a href="https://github.com/TKKRTKY/OpenMic/releases/latest">リリース</a>には
-    セキュリティ担当者向けの資料を同梱していて、
-    ご自身で検証するためのコマンドも載せてあります。
+    どこにも送信しませんし、保存もしません。音声が Mac の外に出ることはありません。
+  </p>
+  <p>
+    社内で許可を取る必要がある場合のために、
+    <a href="https://github.com/TKKRTKY/OpenMic/releases/latest">ダウンロード</a>には
+    セキュリティ担当者向けの資料を同梱しています（自分で検証するためのコマンド付き）。
   </p>
 </section>
 
 <section>
   <h2>インストールとアンインストール</h2>
   <p>
-    <code>.pkg</code> をダウンロードして開くだけです。
-    Developer ID で署名され Apple の公証を通っているので、警告なく開けます。
+    ダウンロードして開くだけです。
   </p>
   <p>
-    インストール時に Core Audio が再起動するため、
-    Mac の音が 1〜2 秒途切れます。通話中は避けてください。
+    インストール中、Mac の音が 1〜2 秒途切れます。通話中は避けてください。
   </p>
   <h3>削除する場合</h3>
   <pre><code>sudo "/Library/Application Support/OpenMic/uninstall.sh"</code></pre>

@@ -36,7 +36,7 @@
     <a class="button" href="https://github.com/TKKRTKY/OpenMic/releases/latest">Download for macOS</a>
     <a class="button secondary" href="#how">How it works</a>
   </div>
-  <p class="requirement">Free · macOS 14.2 or later · Apple silicon and Intel · Signed and notarized by Apple</p>
+  <p class="requirement">Free · macOS 14.2 or later</p>
 </header>
 
 <main class="wrap">
@@ -95,10 +95,10 @@
     at it, then build an Aggregate Device combining it with your microphone.
   </p>
   <p>
-    And it still would not work. An Aggregate Device lays its sources out on
-    <strong>separate channels</strong> — microphone on 1–2, loopback on 3–4 — it
-    does not sum them. Browsers and most apps read only the first two channels,
-    so they receive your microphone and nothing else.
+    And it still would not work. An Aggregate Device keeps its sources
+    <strong>side by side rather than combining them</strong>, and browsers and
+    most apps only ever listen to the first one — so they get your microphone
+    and nothing else.
   </p>
 
   <div class="scroller">
@@ -107,7 +107,7 @@
         <tr><th></th><th>Open Mic</th><th>Loopback driver + Aggregate Device</th></tr>
       </thead>
       <tbody>
-        <tr><td>Mixed audio on channels 1–2</td><td class="yes">Yes</td><td class="no">No — separate channels</td></tr>
+        <tr><td>Actually combines the two</td><td class="yes">Yes</td><td class="no">No — keeps them separate</td></tr>
         <tr><td>Works with browsers and generic apps</td><td class="yes">Yes</td><td class="no">Microphone only</td></tr>
         <tr><td>Setup</td><td class="yes">Install, switch on</td><td class="no">Multi-Output + Aggregate, by hand</td></tr>
         <tr><td>Changes your output device</td><td class="yes">No</td><td class="no">Yes, required</td></tr>
@@ -117,9 +117,9 @@
   </div>
 
   <p>
-    Where those tools win: they are mature, open source, work on older macOS, and
-    need no screen-recording permission. Open Mic asks for more in exchange for
-    doing the one thing automatically.
+    Those tools are mature, open source, work on older versions of macOS and ask
+    for fewer permissions. They are the better choice if you want general audio
+    routing. Open Mic does one thing, without the setup.
   </p>
 </section>
 
@@ -133,29 +133,29 @@
 
   <div class="note">
     <strong>The second one surprises people, so: Open Mic does not record your
-    screen.</strong> On macOS, capturing system audio lives under the Screen
-    Recording permission, and there is no separate one to ask for. Open Mic uses
-    only Core Audio's process tap API and never touches a screen capture API.
+    screen.</strong> macOS files system-audio capture under Screen Recording, and
+    there is no narrower permission to ask for.
   </div>
 
   <p>
-    Nothing is uploaded. Open Mic has no network code at all — audio passes
-    through memory and is never written to disk. The
-    <a href="https://github.com/TKKRTKY/OpenMic/releases/latest">release</a>
-    includes a document for security reviewers with commands to verify that
-    yourself.
+    Nothing is uploaded and nothing is saved. Your audio never leaves your Mac.
+  </p>
+  <p>
+    If you need to justify this to an IT department, the
+    <a href="https://github.com/TKKRTKY/OpenMic/releases/latest">download</a>
+    includes a document written for security reviewers, with commands to check
+    all of it themselves.
   </p>
 </section>
 
 <section>
   <h2>Install and uninstall</h2>
   <p>
-    Download the <code>.pkg</code> and open it. It is signed with a Developer ID
-    and notarized by Apple, so it opens without warnings.
+    Download the installer and open it.
   </p>
   <p>
-    Installing restarts Core Audio, which mutes your Mac for a second or two —
-    don't install during a call.
+    Your Mac goes quiet for a second or two during the install. Not a good moment
+    to be on a call.
   </p>
   <h3>Removing it</h3>
   <pre><code>sudo "/Library/Application Support/OpenMic/uninstall.sh"</code></pre>
