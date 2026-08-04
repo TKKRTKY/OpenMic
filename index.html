@@ -236,6 +236,31 @@
     </details>
 
     <details>
+      <summary>Audio playing in the same app will not reach it</summary>
+      <p>
+        Most apps that handle calls or recording <strong>subtract what they are
+        playing from their own microphone input</strong>. It is what stops your voice
+        coming back at the other person on a call, and it is called echo cancellation.
+      </p>
+      <p>
+        So if <strong>the app playing the audio and the app you want to hear it are the
+        same one</strong>, that audio will not arrive. Playing a video in your browser and
+        expecting a transcriber in the same browser to pick it up is the common case.
+      </p>
+      <p>
+        Keep the source and the listener in separate apps — a different browser is
+        enough. Play in one, transcribe in the other.
+      </p>
+      <p class="sub">
+        Open Mic cannot work around this. Whether echo cancellation is used is decided
+        by the receiving app, and there is no way to change it from outside. Processing
+        the audio to get it through does not work either: the suppression is driven by
+        whether the other side is playing, not by what the audio sounds like — measured,
+        not assumed.
+      </p>
+    </details>
+
+    <details>
       <summary>Telling which half is arriving</summary>
       <p>The menu bar item is an audio level meter.</p>
       <ul>
