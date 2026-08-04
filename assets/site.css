@@ -291,6 +291,20 @@ p { margin: 14px 0; }
 
 .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
 @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+/* One caveat that belongs with the steps rather than in the appendix: someone
+   following them will otherwise try a video and a transcriber in one browser,
+   get nothing, and conclude the app does not work. Kept to two sentences —
+   the reasoning lives further down, under the details. */
+.notice {
+  margin-top: 34px;
+  padding: 14px 18px;
+  border-left: 3px solid var(--sage);
+  background: color-mix(in srgb, var(--sage) 10%, transparent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 15px;
+  max-width: 46em;
+}
+
 .step .num {
   font-size: 46px; font-weight: 700; letter-spacing: -0.03em;
   color: var(--sage); line-height: 1; margin-bottom: 12px;
