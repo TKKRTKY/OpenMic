@@ -136,8 +136,9 @@
       </div>
     </div>
     <p class="notice">
-      Audio playing in the same app you picked Open Mic in will not reach it.
-      <strong>Play it from a different app</strong> — another browser is enough.
+      Playing audio and transcribing it in the same browser may not work: the browser's
+      echo cancellation can remove the playback. If that happens,
+      <strong>play the audio in a different app from the one using Open Mic</strong>.
     </p>
   </div>
 </section>
@@ -240,27 +241,23 @@
     </details>
 
     <details>
-      <summary>Audio playing in the same app will not reach it</summary>
+      <summary>Audio from the same browser may not come through</summary>
       <p>
-        Most apps that handle calls or recording <strong>subtract what they are
-        playing from their own microphone input</strong>. It is what stops your voice
-        coming back at the other person on a call, and it is called echo cancellation.
+        Browsers and calling apps have <strong>echo cancellation</strong>, which stops
+        sound coming out of the speakers from getting back into the microphone.
       </p>
       <p>
-        So if <strong>the app playing the audio and the app you want to hear it are the
-        same one</strong>, that audio will not arrive. Playing a video in your browser and
-        expecting a transcriber in the same browser to pick it up is the common case.
+        Because of it, playing a video while transcribing in the same browser can mean
+        that playback is removed from Open Mic's input.
       </p>
       <p>
-        Keep the source and the listener in separate apps — a different browser is
-        enough. Play in one, transcribe in the other.
+        If that happens, keep the side playing the audio and the side using Open Mic in
+        different apps. Play in Safari and transcribe in Chrome, or play in a browser
+        and transcribe in a desktop app.
       </p>
       <p class="sub">
-        Open Mic cannot work around this. Whether echo cancellation is used is decided
-        by the receiving app, and there is no way to change it from outside. Processing
-        the audio to get it through does not work either: the suppression is driven by
-        whether the other side is playing, not by what the audio sounds like — measured,
-        not assumed.
+        This is audio processing on the receiving side, so it cannot be turned off from
+        Open Mic's settings.
       </p>
     </details>
 
