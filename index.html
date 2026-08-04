@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open Mic — your microphone and your Mac's audio, as one input</title>
+<meta name="description" content="A macOS menu bar app that mixes your microphone with the audio your Mac is playing, and presents both as a single selectable input device. No Audio MIDI Setup, no manual routing.">
+<link rel="icon" href="assets/icon-180.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="alternate" hreflang="ja" href="ja/">
+<link rel="alternate" hreflang="en" href="./">
+<meta property="og:title" content="Open Mic">
+<meta property="og:description" content="Your microphone and your Mac's audio, as one input device.">
+<meta property="og:image" content="assets/icon.png">
+<meta property="og:type" content="website">
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="lang">
+    <a href="./" aria-current="page">English</a>
+    <a href="ja/">日本語</a>
+  </nav>
+</div>
+
+<header class="wrap">
+  <img class="icon" src="assets/icon.png" alt="Open Mic">
+  <h1>Your mic and your Mac's audio,<br>as one microphone.</h1>
+  <p class="tagline">
+    Open Mic mixes what you say with what your Mac is playing — the other side of
+    a call, a video, anything — and presents the result as a single input device
+    that any app can select.
+  </p>
+  <div class="actions">
+    <a class="button" href="https://github.com/TKKRTKY/OpenMic/releases/latest">Download for macOS</a>
+    <a class="button secondary" href="#how">How it works</a>
+  </div>
+  <p class="requirement">Free · macOS 14.2 or later · Apple silicon and Intel · Signed and notarized by Apple</p>
+</header>
+
+<main class="wrap">
+
+<section id="how">
+  <h2>What you get</h2>
+  <p>
+    Transcription tools and AI assistants read one microphone. That is fine when
+    you are the only person talking — and useless the moment the conversation
+    has another side to it, because the voice coming out of your speakers is not
+    part of your microphone input.
+  </p>
+  <p>
+    Open Mic adds an input device called <strong>Open Mic</strong>. Select it
+    anywhere a microphone can be selected, and that app hears both halves of the
+    conversation.
+  </p>
+
+  <div class="figure">
+    <img src="assets/menubar.png" alt="The Open Mic menu bar item in three states">
+    <ul>
+      <li><strong>Both arriving.</strong> The bars move on each side.</li>
+      <li><strong>Only your microphone.</strong> The right side stays flat — system audio is not reaching the mix.</li>
+      <li><strong>Only system audio.</strong> The left side stays flat.</li>
+    </ul>
+  </div>
+
+  <p>
+    The meter is there because "it isn't working" is usually one half failing,
+    not both. Left is your microphone, right is your Mac. You can see which one
+    stopped without opening anything.
+  </p>
+
+  <div class="shot-placeholder">Screenshot of the menu — coming soon</div>
+</section>
+
+<section>
+  <h2>Two steps</h2>
+  <ol>
+    <li>Turn Open Mic on from the menu bar.</li>
+    <li>Choose <strong>Open Mic</strong> as the microphone in the app you are using.</li>
+  </ol>
+  <p>
+    That is the whole setup. Open Mic never changes your output device, so your
+    speakers, headphones and volume keys keep behaving exactly as they did.
+  </p>
+</section>
+
+<section>
+  <h2>Why not a loopback driver?</h2>
+  <p>
+    BlackHole and similar tools are loopback devices: audio sent <em>to</em> them
+    comes back as an input. They do not capture system audio on their own, and
+    they do not mix in your microphone. To approximate this you would build a
+    Multi-Output Device so you can still hear anything, point your system output
+    at it, then build an Aggregate Device combining it with your microphone.
+  </p>
+  <p>
+    And it still would not work. An Aggregate Device lays its sources out on
+    <strong>separate channels</strong> — microphone on 1–2, loopback on 3–4 — it
+    does not sum them. Browsers and most apps read only the first two channels,
+    so they receive your microphone and nothing else.
+  </p>
+
+  <div class="scroller">
+    <table>
+      <thead>
+        <tr><th></th><th>Open Mic</th><th>Loopback driver + Aggregate Device</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Mixed audio on channels 1–2</td><td class="yes">Yes</td><td class="no">No — separate channels</td></tr>
+        <tr><td>Works with browsers and generic apps</td><td class="yes">Yes</td><td class="no">Microphone only</td></tr>
+        <tr><td>Setup</td><td class="yes">Install, switch on</td><td class="no">Multi-Output + Aggregate, by hand</td></tr>
+        <tr><td>Changes your output device</td><td class="yes">No</td><td class="no">Yes, required</td></tr>
+        <tr><td>Survives changing headphones</td><td class="yes">Yes</td><td class="no">Usually needs rebuilding</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Where those tools win: they are mature, open source, work on older macOS, and
+    need no screen-recording permission. Open Mic asks for more in exchange for
+    doing the one thing automatically.
+  </p>
+</section>
+
+<section>
+  <h2>Permissions</h2>
+  <p>macOS will ask for two things the first time you switch it on.</p>
+  <ul>
+    <li><strong>Microphone</strong> — to capture your voice.</li>
+    <li><strong>Screen Recording</strong> — to capture what your Mac is playing.</li>
+  </ul>
+
+  <div class="note">
+    <strong>The second one surprises people, so: Open Mic does not record your
+    screen.</strong> On macOS, capturing system audio lives under the Screen
+    Recording permission, and there is no separate one to ask for. Open Mic uses
+    only Core Audio's process tap API and never touches a screen capture API.
+  </div>
+
+  <p>
+    Nothing is uploaded. Open Mic has no network code at all — audio passes
+    through memory and is never written to disk. The
+    <a href="https://github.com/TKKRTKY/OpenMic/releases/latest">release</a>
+    includes a document for security reviewers with commands to verify that
+    yourself.
+  </p>
+</section>
+
+<section>
+  <h2>Install and uninstall</h2>
+  <p>
+    Download the <code>.pkg</code> and open it. It is signed with a Developer ID
+    and notarized by Apple, so it opens without warnings.
+  </p>
+  <p>
+    Installing restarts Core Audio, which mutes your Mac for a second or two —
+    don't install during a call.
+  </p>
+  <h3>Removing it</h3>
+  <pre><code>sudo "/Library/Application Support/OpenMic/uninstall.sh"</code></pre>
+  <p>
+    That removes everything and verifies nothing was left behind.
+  </p>
+</section>
+
+<section>
+  <h2>Feedback</h2>
+  <p>
+    Bug reports and requests go to
+    <a href="https://github.com/TKKRTKY/OpenMic/issues">GitHub Issues</a>. The app
+    has a <strong>Send Feedback</strong> item that opens a new issue with the
+    diagnostics already filled in — which devices you are using, whether the
+    driver is installed, how the capture is behaving. It opens the form in your
+    browser so you can read and edit it; nothing is sent until you press the
+    button.
+  </p>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p>
+    Open Mic · <a href="https://github.com/TKKRTKY/OpenMic">GitHub</a> ·
+    <a href="ja/">日本語</a>
+  </p>
+</footer>
+
+</body>
+</html>
