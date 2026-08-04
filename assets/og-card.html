@@ -2,10 +2,10 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="assets/site.css">
 <style>
-  /* The card shows the thing itself. The platform always prints the title and
-     the description underneath, so a card that also spells out the headline and
-     the tagline makes the reader read the same two sentences twice — which is
-     what the first version did. The panel is what those sentences cannot say. */
+  /* The headline belongs here, where it is read large, and og:title is cut back
+     to the product name so it is not printed twice. Putting the weaker line on
+     the card to avoid the repetition had it the wrong way round. The panel
+     stays: it is the part no line of text underneath can show. */
   html, body { width: 1200px; height: 630px; margin: 0; overflow: hidden; }
   body {
     background: var(--bg);
@@ -17,8 +17,8 @@
   .brand img { width: 78px; height: 78px; border-radius: 21px; display: block; }
   .brand span { font-size: 40px; font-weight: 600; letter-spacing: -.02em; }
   .line { height: 5px; width: 92px; background: var(--sage); border-radius: 3px; margin-bottom: 28px; }
-  .say { font-size: 40px; font-weight: 700; line-height: 1.3; letter-spacing: -.02em;
-         word-break: auto-phrase; max-width: 11em; }
+  .say { font-size: 48px; font-weight: 700; line-height: 1.22; letter-spacing: -.03em;
+         word-break: auto-phrase; }
   .say .soft { color: var(--ink-soft); font-weight: 400; font-size: 23px;
                display: block; margin-top: 18px; letter-spacing: 0;
                white-space: nowrap; }
@@ -75,7 +75,7 @@
   const lang = new URLSearchParams(location.search).get("lang") || "en";
   document.documentElement.lang = lang;
   document.getElementById("say").innerHTML = {
-    en: 'One switch in the<br>menu bar.<span class="soft">Free · macOS 14.2 or later · No account</span>',
-    ja: 'メニューバーの<br>スイッチひとつ。<span class="soft">無料 · macOS 14.2 以降 · アカウント不要</span>'
+    en: 'Let your AI hear<br>the whole conversation.',
+    ja: 'AIに、会話の<br>ぜんぶを聞かせる。'
   }[lang];
 </script>
