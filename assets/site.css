@@ -187,12 +187,23 @@ h1 {
 
 /* --- flow ------------------------------------------------------------ */
 
+/* Three columns with equal outer tracks, so the middle node sits on the page's
+   centre line. Laid out as a row it drifted left: the pair of sources on the
+   left is wider than the single node on the right, and centring the row centres
+   the group rather than the product. */
 .flow {
-  display: flex; align-items: center; justify-content: center;
-  gap: clamp(12px, 3vw, 30px);
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   padding: 12px 0 4px;
 }
+.flow .side {
+  display: flex; align-items: center;
+  gap: clamp(12px, 2.4vw, 26px);
+}
+.flow .side.left { justify-content: flex-end; padding-right: clamp(12px, 2.4vw, 26px); }
+.flow .side.right { justify-content: flex-start; padding-left: clamp(12px, 2.4vw, 26px); }
+
 .flow .node {
   background: var(--bg-raised);
   border: 1px solid var(--rule);
@@ -205,9 +216,22 @@ h1 {
 .flow .node.primary {
   background: var(--ink); color: var(--bg); border-color: var(--ink);
   font-weight: 600;
+  display: inline-flex; align-items: center; gap: 11px;
+  padding-left: 16px;
+}
+/* 26px rather than 22: the icon has a waveform either side of the microphone,
+   and below about this size those bars close up into a smudge. */
+.flow .node.primary img {
+  width: 26px; height: 26px; border-radius: 7px; display: block;
 }
 .flow .arrow { color: var(--ink-soft); font-size: 20px; }
 .flow .pair { display: flex; flex-direction: column; gap: 10px; }
+
+@media (max-width: 720px) {
+  .flow { grid-template-columns: 1fr; justify-items: center; gap: 14px; }
+  .flow .side { flex-direction: column; padding: 0; }
+  .flow .side.left .arrow, .flow .side.right .arrow { transform: rotate(90deg); }
+}
 
 /* --- sections -------------------------------------------------------- */
 
