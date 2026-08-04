@@ -289,3 +289,72 @@ footer a { color: var(--ink-soft); }
   background: color-mix(in srgb, var(--ink) 30%, transparent);
   display: inline-block;
 }
+
+/* --- privacy spec sheet ---------------------------------------------- */
+
+.spec {
+  margin: 34px auto 0;
+  max-width: 560px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+  overflow: hidden;
+}
+.spec .row {
+  display: flex; justify-content: space-between; gap: 20px;
+  padding: 14px 24px;
+  font-size: 15px;
+  text-align: left;
+}
+.spec .row + .row { border-top: 1px solid var(--rule); }
+.spec .row dt { margin: 0; color: var(--ink-soft); }
+.spec .row dd { margin: 0; font-weight: 600; text-align: right; }
+.spec .row dd.good { color: var(--sage); }
+
+/* Four use cases read better two-up than squeezed four across. */
+.cards.four { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 820px) { .cards.four { grid-template-columns: 1fr; } }
+.card.lead { border-color: var(--sage); }
+.card .tag {
+  display: inline-block; font-size: 12px; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 8px;
+}
+
+/* --- support --------------------------------------------------------- */
+
+.support {
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  padding: 56px 0 72px;
+}
+.support h3 { font-size: 20px; margin-bottom: 8px; }
+.support p { color: var(--ink-soft); margin: 0 auto 22px; max-width: 32em; font-size: 15px; }
+.support .button { padding: 12px 26px; font-size: 16px; }
+
+/* --- step visuals ----------------------------------------------------- */
+
+/* Small reproductions of the two things the user actually clicks. Built from
+   markup rather than screenshots so the labels stay translatable and stay
+   crisp at any scale — and so they cannot drift out of date silently, since
+   they are what the app really shows. */
+.step .shot {
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  padding: 9px;
+  margin: 18px 0 16px;
+  max-width: 300px;
+  font-size: 13.5px;
+}
+.step .shot .item {
+  padding: 6px 11px; border-radius: 7px;
+  display: flex; justify-content: space-between; gap: 12px;
+}
+.step .shot .item.sel { background: var(--ink); color: var(--bg); font-weight: 600; }
+.step .shot .item.mut { color: var(--ink-soft); }
+.step .shot .cap {
+  font-size: 11px; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--ink-soft); padding: 3px 11px 7px;
+}
+.step .shot .tick { opacity: .9; }
