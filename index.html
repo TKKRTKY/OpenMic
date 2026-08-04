@@ -131,7 +131,7 @@
           <div class="item sel"><span>Open Mic</span><span class="tick">✓</span></div>
           <div class="item mut"><span>External Headphones</span></div>
         </div>
-        <p class="sub">It stays selected, whether Open Mic is on or off.</p>
+        <p class="sub">You pick it once. After that you only turn Open Mic on and off.</p>
       </div>
     </div>
   </div>
@@ -213,8 +213,7 @@
         </table>
       </div>
       <p class="sub">
-        Loopback drivers are mature and well suited to routing audio wherever
-        you like.
+        Loopback drivers are well suited to routing audio wherever you like.
       </p>
       <p>
         Open Mic is not a tool for routing audio freely.
@@ -230,8 +229,7 @@
         <strong>Screen Recording</strong>, to capture what your Mac is playing.
       </p>
       <p>
-        The second one surprises people, so plainly: Open Mic does not record
-        your screen. macOS files system-audio capture under Screen Recording, and
+        Open Mic does not record your screen. macOS files system-audio capture under Screen Recording, and
         there is no narrower permission to ask for.
       </p>
     </details>
@@ -255,19 +253,6 @@
       <p>To remove everything:</p>
       <pre><code>sudo "/Library/Application Support/OpenMic/uninstall.sh"</code></pre>
       <p class="sub">Removes the app and everything it installed, then checks nothing was left behind.</p>
-    </details>
-
-    <details>
-      <summary>For IT and security review</summary>
-      <p>
-        The <a href="https://github.com/TKKRTKY/OpenMic/releases/latest">download</a>
-        includes a document written for IT and security reviewers, covering:
-      </p>
-      <ul>
-        <li>what gets installed and where</li>
-        <li>why a background service is needed</li>
-        <li>how to verify the privacy claims above independently</li>
-      </ul>
     </details>
 
     <details>
