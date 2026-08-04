@@ -262,7 +262,13 @@ section + section { border-top: 1px solid var(--rule); }
    with. Reading measure is held by max-width rather than by a narrower box. */
 .sec-head { text-align: left; }
 .sec-head + .wrap { margin-top: 8px; }
-.sec-head .sub, .sec-head p { max-width: 68ch; }
+/* Measured per script, because `ch` is the width of a zero: a Japanese
+   character is about two of them, so a single figure that gives English ~70
+   characters a line gives Japanese ~34 and breaks the paragraph early with
+   half the column standing empty. Both of these come out around 45 characters
+   a line. */
+.sec-head .sub, .sec-head p { max-width: 34em; }
+:lang(ja) .sec-head .sub, :lang(ja) .sec-head p { max-width: 46em; }
 
 h2 {
   font-size: clamp(27px, 3.4vw, 36px);
