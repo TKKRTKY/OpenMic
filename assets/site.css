@@ -283,7 +283,7 @@ h3 { font-size: 18px; margin: 0 0 6px; font-weight: 600; }
    「チームにひ / らく。」 splits a word in half. auto-phrase moves the break to
    the nearest phrase boundary. It does nothing to English, and browsers that
    do not know it simply wrap as before. */
-h1, h2, h3 { word-break: auto-phrase; }
+h1, h2, h3, p, li, dd, dt, td, th { word-break: auto-phrase; }
 p { margin: 14px 0; }
 .sub { color: var(--ink-soft); }
 
@@ -381,6 +381,16 @@ footer {
   display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
 }
 footer a { color: var(--ink-soft); }
+
+/* Its own line at the very bottom, quieter than the links above it. Placed to
+   be noticed by someone who read to the end, not to be read on the way past —
+   so it stays out of the body and off the calls to action. */
+footer .motto {
+  flex-basis: 100%;
+  font-size: 12.5px;
+  letter-spacing: .02em;
+  opacity: .6;
+}
 
 /* Stand-ins for the neighbouring menu bar items. Deliberately abstract shapes
    rather than SF Symbols glyphs: those live in a private-use area and render as
