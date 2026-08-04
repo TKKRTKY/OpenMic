@@ -359,3 +359,15 @@ footer a { color: var(--ink-soft); }
 }
 .step .shot .tick { opacity: .9; }
 
+
+/* The app icon inside the flow's centre node, so the thing being described is
+   recognisable at a glance rather than being just another labelled box. */
+.flow .node.primary {
+  display: inline-flex; align-items: center; gap: 11px;
+  padding-left: 16px;
+}
+/* 26px rather than 22: the icon has a waveform either side of the microphone,
+   and below about this size those bars close up into a smudge. */
+.flow .node.primary img {
+  width: 26px; height: 26px; border-radius: 7px; display: block;
+}
