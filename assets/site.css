@@ -359,27 +359,3 @@ footer a { color: var(--ink-soft); }
 }
 .step .shot .tick { opacity: .9; }
 
-/* --- where the name comes from --------------------------------------- */
-
-/* Quiet on purpose. It is the warmest thing on the page and the least urgent,
-   so it sits between the details and the last call to action without competing
-   with either. */
-.origin { text-align: center; }
-.origin .mark {
-  width: 46px; height: 46px; margin: 0 auto 22px;
-  border-radius: 50%;
-  border: 1px solid var(--rule);
-  display: flex; align-items: center; justify-content: center;
-}
-.origin .mark img { width: 22px; height: 22px; opacity: .85; }
-@media (prefers-color-scheme: dark) { .origin .mark img { filter: invert(1); } }
-.origin { padding: 96px 0; }
-.origin .lead {
-  max-width: 16em; margin: 0 auto 18px;
-  font-size: clamp(26px, 3.2vw, 34px);
-  line-height: 1.35; letter-spacing: -0.02em; font-weight: 700;
-}
-.origin .tail {
-  max-width: 28em; margin: 0 auto;
-  color: var(--ink-soft); font-size: 17px;
-}
