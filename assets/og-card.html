@@ -1,0 +1,81 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  /* The card shows the thing itself. The platform always prints the title and
+     the description underneath, so a card that also spells out the headline and
+     the tagline makes the reader read the same two sentences twice — which is
+     what the first version did. The panel is what those sentences cannot say. */
+  html, body { width: 1200px; height: 630px; margin: 0; overflow: hidden; }
+  body {
+    background: var(--bg);
+    display: grid; grid-template-columns: 1fr auto;
+    align-items: center; gap: 48px;
+    padding: 0 56px 0 88px;
+  }
+  .brand { display: flex; align-items: center; gap: 20px; margin-bottom: 34px; }
+  .brand img { width: 78px; height: 78px; border-radius: 21px; display: block; }
+  .brand span { font-size: 40px; font-weight: 600; letter-spacing: -.02em; }
+  .line { height: 5px; width: 92px; background: var(--sage); border-radius: 3px; margin-bottom: 28px; }
+  .say { font-size: 40px; font-weight: 700; line-height: 1.3; letter-spacing: -.02em;
+         word-break: auto-phrase; max-width: 11em; }
+  .say .soft { color: var(--ink-soft); font-weight: 400; font-size: 23px;
+               display: block; margin-top: 18px; letter-spacing: 0;
+               white-space: nowrap; }
+  .shot { margin-right: 0; }
+  .mock { width: 470px; }
+  /* Bigger than on the site, because the card is looked at small. Scaling the
+     type rather than the box keeps the panel's own proportions. */
+  .mock .menu { max-width: 100%; font-size: 17px; padding: 18px; border-radius: 17px; }
+  .mock .menu .head { font-size: 18px; }
+  .mock .menu .head .ver { font-size: 14px; }
+  .mock .toggle { font-size: 16.5px; padding: 12px 16px; border-radius: 12px; }
+  .mock .status { font-size: 14px; }
+  .mock .level, .mock .opt, .mock .check, .mock .field, .mock .links { font-size: 15px; }
+  .mock .level .name { width: 108px; }
+  .mock .hint { font-size: 13.5px; }
+  .mock-menubar { font-size: 15px; padding: 9px 20px; }
+  .mock-menubar img { height: 22px; }
+  .mock-body { padding: 22px 24px 30px; }
+</style>
+<div>
+  <div class="brand"><img src="assets/icon.png" alt=""><span>Open Mic</span></div>
+  <div class="line"></div>
+  <p class="say" id="say"></p>
+</div>
+<div class="shot">
+  <div class="mock">
+    <div class="mock-menubar">
+      <img src="assets/menubar-item.png" alt="">
+      <span class="chip"></span><span class="chip"></span><span>14:32</span>
+    </div>
+    <div class="mock-body">
+      <div class="menu">
+        <div class="head"><span>Open Mic</span><span class="ver">0.4.0 (5)</span></div>
+        <div class="sep"></div>
+        <div class="toggle"><span class="dot"></span>Turn Off</div>
+        <div class="status">Microphone + system audio</div>
+        <div class="levels">
+          <div class="level"><span class="name">Microphone</span><span class="track"><span class="fill" style="width:78%"></span></span></div>
+          <div class="level"><span class="name">System audio</span><span class="track"><span class="fill sage" style="width:52%"></span></span></div>
+        </div>
+        <div class="sep"></div>
+        <div class="field">Microphone source</div>
+        <div class="opt"><span class="tick"></span>System default</div>
+        <div class="opt sel"><span class="tick"></span>MacBook Pro Microphone</div>
+        <div class="check"><span class="box">☑</span>Open at Login</div>
+        <div class="sep"></div>
+        <div class="hint">Select “Open Mic” as the microphone in your AI app</div>
+        <div class="links"><span>Updates</span><span>Feedback</span><span class="end">Quit</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const lang = new URLSearchParams(location.search).get("lang") || "en";
+  document.documentElement.lang = lang;
+  document.getElementById("say").innerHTML = {
+    en: 'One switch in the<br>menu bar.<span class="soft">Free · macOS 14.2 or later · No account</span>',
+    ja: 'メニューバーの<br>スイッチひとつ。<span class="soft">無料 · macOS 14.2 以降 · アカウント不要</span>'
+  }[lang];
+</script>
