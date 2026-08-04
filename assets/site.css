@@ -229,7 +229,17 @@ h1 {
 
 @media (max-width: 720px) {
   .flow { grid-template-columns: 1fr; justify-items: center; gap: 14px; }
-  .flow .side { flex-direction: column; padding: 0; }
+  /* .left and .right are named explicitly: their side padding is what holds the
+     row apart when the three columns sit next to each other, and a plain
+     `.flow .side` reset loses to it on specificity. It did — each column kept
+     half its gap, so the stack came out 6px left, centred, 6px right. */
+  .flow .side,
+  .flow .side.left,
+  .flow .side.right {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+  }
   .flow .side.left .arrow, .flow .side.right .arrow { transform: rotate(90deg); }
 }
 
@@ -251,6 +261,12 @@ h2 {
   font-weight: 700;
 }
 h3 { font-size: 18px; margin: 0 0 6px; font-weight: 600; }
+
+/* Japanese has no spaces, so a heading breaks wherever the line runs out —
+   「チームにひ / らく。」 splits a word in half. auto-phrase moves the break to
+   the nearest phrase boundary. It does nothing to English, and browsers that
+   do not know it simply wrap as before. */
+h1, h2, h3 { word-break: auto-phrase; }
 p { margin: 14px 0; }
 .sub { color: var(--ink-soft); }
 
@@ -452,4 +468,25 @@ footer a { color: var(--ink-soft); }
 .step .shot .minilevel .track {
   display: block; flex: 1; height: 6px; border-radius: 3px;
   background: color-mix(in srgb, var(--ink) 13%, transparent);
+}
+
+
+/* --- phones ------------------------------------------------------------ */
+
+/* Everything here is about one measurement: about 310px of usable width once
+   the page gutters are taken off a 390px screen. */
+@media (max-width: 560px) {
+  .wrap { padding: 0 20px; }
+  section { padding: 56px 0; }
+  .closing { padding: 72px 0; }
+
+  /* The floor of the clamp, not a scaled value: at 38px the second line of the
+     hero broke again and left 「る。」 alone on a third line. */
+  h1 { font-size: 31px; }
+
+  /* Gutters inside the disclosures, so the comparison table gets the width
+     back rather than scrolling. */
+  details { padding: 4px 16px; }
+  table { min-width: 0; font-size: 13.5px; }
+  th, td { padding: 9px 8px; }
 }
