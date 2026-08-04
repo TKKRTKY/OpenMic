@@ -7,7 +7,7 @@
 <meta name="description" content="マイクと Mac の音を 1 本の仮想マイクにミックス。AI に会話のぜんぶを聞かせます。ルーティング設定は不要。録音も外部送信もしません。">
 <link rel="icon" href="../assets/icon-180.png">
 <link rel="apple-touch-icon" href="../assets/icon-180.png">
-<link rel="stylesheet" href="../assets/site.css?v=10">
+<link rel="stylesheet" href="../assets/site.css?v=13">
 <link rel="alternate" hreflang="en" href="../">
 <link rel="alternate" hreflang="ja" href="./">
 <meta property="og:title" content="Open Mic">
@@ -52,17 +52,22 @@
       </div>
       <div class="mock-body">
         <div class="menu">
-          <div class="row head">Open Mic</div>
+          <div class="head"><span>Open Mic</span><span class="ver">0.3.0 (4)</span></div>
           <div class="sep"></div>
-          <div class="row on">Turn Off</div>
+          <div class="toggle"><span class="dot"></span>Turn Off</div>
+          <div class="status">Mic + system audio</div>
           <div class="levels">
-            <div class="level"><span class="name">マイク</span><span class="track"><span class="fill" style="width:78%"></span></span></div>
-            <div class="level"><span class="name">Mac の音</span><span class="track"><span class="fill sage" style="width:52%"></span></span></div>
+            <div class="level"><span class="name">Microphone</span><span class="track"><span class="fill" style="width:78%"></span></span></div>
+            <div class="level"><span class="name">System audio</span><span class="track"><span class="fill sage" style="width:52%"></span></span></div>
           </div>
           <div class="sep"></div>
-          <div class="row dim">Microphone: MacBook Pro</div>
-          <div class="row dim">Balance: Even</div>
-          <div class="row dim">Open at Login</div>
+          <div class="field">Microphone source</div>
+          <div class="opt"><span class="tick"></span>System default</div>
+          <div class="opt sel"><span class="tick"></span>MacBook Pro Microphone</div>
+          <div class="check"><span class="box">☑</span>Open at Login</div>
+          <div class="sep"></div>
+          <div class="hint">Select “Open Mic” as the microphone in your AI app</div>
+          <div class="links"><span>Updates</span><span>Feedback</span><span class="end">Quit</span></div>
         </div>
       </div>
     </div>
@@ -106,11 +111,11 @@
       <div class="step">
         <div class="num">01</div>
         <h3>ON にする</h3>
-        <div class="shot" role="img" aria-label="Open Mic のメニュー。Turn On が選択されている">
+        <div class="shot" role="img" aria-label="Open Mic のパネル。OFF の状態">
           <div class="cap">メニューバー</div>
-          <div class="item sel"><span>Turn On</span></div>
-          <div class="item mut"><span>Microphone: MacBook Pro</span></div>
-          <div class="item mut"><span>Balance: Even</span></div>
+          <div class="item off"><span class="dot"></span><span>Turn On</span></div>
+          <div class="minilevel"><span class="name">Microphone</span><span class="track"></span></div>
+          <div class="minilevel"><span class="name">System audio</span><span class="track"></span></div>
         </div>
         <p class="sub">出力先も音量キーもヘッドフォンも、今までどおり動きます。</p>
       </div>

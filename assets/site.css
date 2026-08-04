@@ -127,24 +127,37 @@ h1 {
 .menu {
   background: var(--bg-raised);
   border: 1px solid var(--rule);
-  border-radius: 12px;
-  padding: 7px;
-  font-size: 14px;
-  max-width: 290px;
+  border-radius: 13px;
+  padding: 13px;
+  font-size: 13px;
+  max-width: 268px;
   margin-left: auto;
 }
-.menu .row { padding: 5px 11px; border-radius: 7px; display: flex; justify-content: space-between; gap: 10px; }
-.menu .row.head { font-weight: 600; }
-.menu .row.on { background: var(--ink); color: var(--bg); font-weight: 600; }
-.menu .row.dim { color: var(--ink-soft); }
-.menu .sep { height: 1px; background: var(--rule); margin: 6px 9px; }
 
-.levels { padding: 10px 11px 4px; }
-.level { display: flex; align-items: center; gap: 10px; margin: 9px 0; font-size: 13px; }
+.menu .head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-weight: 600; font-size: 13.5px;
+}
+.menu .head .ver { font-weight: 400; font-size: 10.5px; opacity: .45; }
+.menu .sep { height: 1px; background: var(--rule); margin: 11px 0; }
+
+/* The state control: filled while running, quiet while not — the panel says
+   which state it is in before the label is read. */
+.menu .toggle {
+  display: flex; align-items: center; gap: 8px;
+  padding: 9px 12px; border-radius: 9px;
+  background: var(--ink); color: var(--bg-raised);
+  font-weight: 600; font-size: 12.5px;
+}
+.menu .toggle .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--sage); flex-shrink: 0;
+}
+.menu .status { font-size: 10.5px; color: var(--ink-soft); margin-top: 8px; }
+
+.levels { margin: 12px 0 2px; }
+.level { display: flex; align-items: center; gap: 9px; margin: 9px 0; font-size: 11.5px; }
 .level .name { width: 82px; color: var(--ink-soft); flex-shrink: 0; }
-/* display: block is load bearing. These are spans, and height on an inline box
-   is ignored — the bars rendered as empty tracks with no fill at all, which
-   looked like a styling nicety and was actually the whole point of the mock. */
 .level .track {
   display: block;
   flex: 1; height: 7px; border-radius: 4px;
@@ -153,6 +166,24 @@ h1 {
 }
 .level .fill { display: block; height: 100%; border-radius: 4px; background: var(--ink); }
 .level .fill.sage { background: var(--sage); }
+
+.menu .field { font-size: 11.5px; color: var(--ink-soft); margin-bottom: 4px; }
+.menu .opt {
+  display: flex; align-items: center; gap: 6px;
+  padding: 3px 7px; border-radius: 5px; font-size: 11.5px;
+}
+.menu .opt.sel { background: color-mix(in srgb, var(--ink) 10%, transparent); font-weight: 500; }
+.menu .opt .tick { width: 9px; color: var(--ink); font-size: 10px; }
+.menu .opt.sel .tick::before { content: "✓"; }
+
+.menu .check { display: flex; align-items: center; gap: 7px; font-size: 11.5px; margin-top: 11px; }
+.menu .check .box { color: var(--ink); font-size: 12px; }
+
+.menu .hint { font-size: 10.5px; color: var(--ink-soft); opacity: .8; margin-top: 4px; }
+.menu .links {
+  display: flex; gap: 12px; font-size: 11.5px; color: var(--ink); margin-top: 8px;
+}
+.menu .links .end { margin-left: auto; }
 
 /* --- flow ------------------------------------------------------------ */
 
@@ -370,4 +401,31 @@ footer a { color: var(--ink-soft); }
    and below about this size those bars close up into a smudge. */
 .flow .node.primary img {
   width: 26px; height: 26px; border-radius: 7px; display: block;
+}
+
+/* Step 01 mirrors the panel's off state: outlined rather than filled.
+   justify-content is reset because the shared .item rule spreads its children
+   apart, which threw the label to the far edge away from its own dot. */
+.step .shot .item.off {
+  display: flex; align-items: center; gap: 7px;
+  justify-content: flex-start;
+  background: color-mix(in srgb, var(--ink) 9%, transparent);
+  color: var(--ink); font-weight: 600;
+}
+.step .shot .item.off .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: color-mix(in srgb, var(--ink) 32%, transparent);
+  flex-shrink: 0;
+}
+/* Empty bars, because nothing is arriving while it is switched off. Drawn
+   rather than typed: a row of underscore characters reads as a blank to fill
+   in, not as a meter at rest. */
+.step .shot .minilevel {
+  display: flex; align-items: center; gap: 9px;
+  padding: 5px 11px; font-size: 11.5px; color: var(--ink-soft);
+}
+.step .shot .minilevel .name { width: 82px; flex-shrink: 0; }
+.step .shot .minilevel .track {
+  display: block; flex: 1; height: 6px; border-radius: 3px;
+  background: color-mix(in srgb, var(--ink) 13%, transparent);
 }
