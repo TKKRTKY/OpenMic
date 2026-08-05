@@ -152,8 +152,8 @@
       </div>
     </div>
     <p class="notice">
-      Playing audio and transcribing it in the same browser may not work: the browser's
-      echo cancellation can remove the playback. If that happens, <strong>keep the side
+      Playing audio and transcribing it in the same browser can leave the playback much
+      quieter, and sometimes too quiet to pick up. If that happens, <strong>keep the side
       playing the audio and the side using Open Mic in different browsers or apps</strong>.
     </p>
   </div>
@@ -257,19 +257,20 @@
     </details>
 
     <details>
-      <summary>When audio from the same browser does not come through</summary>
+      <summary>When audio from the same browser is hard to pick up</summary>
       <p>
         Browsers and calling apps have <strong>echo cancellation</strong>, which stops
         sound coming out of the speakers from getting back into the microphone.
       </p>
       <p>
-        Because of it, playing a video while transcribing in the same browser can mean
-        that playback is removed from Open Mic's input.
+        Because of it, playing a video while transcribing in the same browser leaves that
+        playback much quieter in Open Mic's input. Sometimes it still works; sometimes it
+        stops being picked up. It depends on the app.
       </p>
       <p>
-        If that happens, keep the side playing the audio and the side using Open Mic in
-        different browsers or apps. Play in Safari and transcribe in Chrome, or play in a
-        browser and transcribe in a desktop app.
+        If it stops being picked up, keep the side playing the audio and the side using
+        Open Mic in different browsers or apps. Play in Safari and transcribe in Chrome, or
+        play in a browser and transcribe in a desktop app.
       </p>
       <p class="sub">
         This is audio processing on the receiving side, so it cannot be turned off from
