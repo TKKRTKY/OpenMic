@@ -1,0 +1,51 @@
+# Open Mic
+
+> A macOS menu bar app that mixes your microphone with the audio your Mac is
+> playing and presents the result as a single virtual microphone, so an app that
+> can only read one input hears both sides of a conversation.
+
+Free. macOS 14.2 or later. No account. Signed with a Developer ID and notarized
+by Apple. The application source is not published; the landing page and the
+released package are.
+
+## What problem it solves
+
+Most AI apps — transcription tools, agents, meeting notes — take a single
+microphone input. Your own voice reaches them; the voices your Mac is playing
+back do not. Open Mic mixes the two and hands the result to the app as an
+ordinary microphone, with no audio routing to configure.
+
+## How it works
+
+It installs a Core Audio driver that publishes a virtual input device called
+"Open Mic", plus a background service. The app captures the chosen microphone
+and the system audio, mixes them, and feeds the driver. You pick "Open Mic" as
+the input in whichever app you are using.
+
+## Permissions
+
+Microphone, to capture your voice. Screen Recording, to capture what your Mac is
+playing — macOS files system-audio capture under that permission and offers no
+narrower one. Open Mic does not capture or record the screen.
+
+## Privacy
+
+Open Mic does not record, store, or upload audio. Mixing happens entirely on the
+Mac. How the app you hand the audio to treats it is covered by that service's
+own privacy policy.
+
+## Known limitation
+
+Audio played by the same browser that is transcribing can arrive much quieter,
+because that browser's echo cancellation subtracts what it is playing from what
+it captures. Sometimes it still works; sometimes it stops being picked up. If it
+does, play the audio in a different browser or app from the one using Open Mic.
+This is processing on the receiving side and cannot be disabled from Open Mic.
+
+## Links
+
+- [Landing page, English](https://tkkrtky.github.io/OpenMic/)
+- [Landing page, Japanese](https://tkkrtky.github.io/OpenMic/ja/)
+- [Download](https://github.com/TKKRTKY/OpenMic/releases/latest/download/OpenMic.pkg)
+- [Releases and security review document](https://github.com/TKKRTKY/OpenMic/releases)
+- [Issues](https://github.com/TKKRTKY/OpenMic/issues)
