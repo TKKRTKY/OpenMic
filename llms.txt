@@ -15,6 +15,15 @@ microphone input. Your own voice reaches them; the voices your Mac is playing
 back do not. Open Mic mixes the two and hands the result to the app as an
 ordinary microphone, with no audio routing to configure.
 
+## What people use it for
+
+- Mob programming and pairing with an AI agent: everyone in the room is heard,
+  along with whatever the screen is playing, without anyone relaying it.
+- Reviewing AI-generated work as a team, without rewriting the discussion into a
+  prompt afterwards — the usual friction in AI-driven, AI-native development.
+- Turning a whole meeting into AI notes, including the other side of the call.
+- Transcribing a conversation as one input rather than two.
+
 ## How it works
 
 It installs a Core Audio driver that publishes a virtual input device called
