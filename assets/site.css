@@ -433,17 +433,6 @@ footer .motto {
   color: var(--sage); margin-bottom: 8px;
 }
 
-/* --- support --------------------------------------------------------- */
-
-.support {
-  border-top: 1px solid var(--rule);
-  text-align: center;
-  padding: 56px 0 72px;
-}
-.support h3 { font-size: 20px; margin-bottom: 8px; }
-.support p { color: var(--ink-soft); margin: 0 auto 22px; max-width: 32em; font-size: 15px; }
-.support .button { padding: 12px 26px; font-size: 16px; }
-
 /* --- step visuals ----------------------------------------------------- */
 
 /* Small reproductions of the two things the user actually clicks. Built from
