@@ -67,14 +67,9 @@ p {
   border-radius: 8px;
 }
 .app-icon {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
 }
-.app-icon svg {
-  width: 64%;
-  height: 64%;
-}
+
 .nav {
   display: flex;
   align-items: center;
@@ -113,12 +108,7 @@ p {
 .meta span {
   margin: 0 9px;
 }
-.eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  line-height: 1.5;
-  font-weight: 600;
-}
+
 .lede {
   font-size: 15px;
   line-height: 2.05;
@@ -129,11 +119,9 @@ p {
 .section-head {
   margin-bottom: 42px;
 }
-.section-head .eyebrow {
-  margin-bottom: 18px;
-}
+
 .desc {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 2;
   color: var(--muted);
 }
@@ -146,7 +134,7 @@ p {
   margin-top: 12px;
 }
 .notice {
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.9;
   margin-top: 28px;
   color: var(--muted);
@@ -162,7 +150,7 @@ p {
   border-top: 1px solid var(--rule);
 }
 .specs dt {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--muted);
 }
 .specs dd {
@@ -239,20 +227,7 @@ p {
   font-size: 19px;
   font-weight: 300;
 }
-.wave {
-  display: flex;
-  gap: 3px;
-  align-items: center;
-  height: 72px;
-  justify-content: center;
-}
-.wave i {
-  display: block;
-  width: 3px;
-  height: var(--h);
-  background: currentColor;
-  border-radius: 2px;
-}
+
 .menu {
   width: 290px;
   background: #f5f5f8;
@@ -274,11 +249,7 @@ p {
   justify-content: space-between;
   padding: 5px 8px 10px;
 }
-.menu-version {
-  font-size: 9px;
-  font-weight: 400;
-  color: #7b7b87;
-}
+
 .menu-sep {
   height: 1px;
   background: #d5d7df;
@@ -467,13 +438,7 @@ body {
   background: var(--surface);
   color: var(--ink);
 }
-.app-icon {
-  color: white;
-  background: #3274cf;
-  box-shadow:
-    inset 0 0 0 1px #ffffff50,
-    0 2px 5px #1d52962b;
-}
+
 .nav {
   border-bottom: 1px solid #edf0f3;
 }
@@ -482,29 +447,16 @@ body {
 }
 .hero {
   text-align: center;
-  padding: 54px 0 0;
+  padding: 36px 0 0;
 }
-.hero .hero-icon {
-  width: 66px;
-  height: 66px;
-  border-radius: 17px;
-  margin: 0 auto 26px;
-}
-.hero .eyebrow {
-  color: var(--muted);
-  font-weight: 400;
-  margin-bottom: 20px;
-}
+
 .hero h1 {
   font-size: 64px;
   line-height: 1.32;
   letter-spacing: -0.055em;
   font-weight: 700;
 }
-.hero h1 em {
-  font-style: normal;
-  color: #3171c2;
-}
+
 .hero .lede {
   max-width: 590px;
   margin: 22px auto 26px;
@@ -521,16 +473,15 @@ body {
   color: var(--muted);
 }
 .native-stage {
-  width: 860px;
+  width: 400px;
   max-width: 100%;
   height: 344px;
   background: #edf3fb;
-  margin: 47px auto 0;
-  border-radius: 15px 15px 0 0;
+  margin: 34px auto 0;
+  border-radius: 15px;
   position: relative;
   overflow: hidden;
   border: 1px solid #dce6f2;
-  border-bottom: 0;
 }
 .desktop-bar {
   height: 28px;
@@ -556,48 +507,20 @@ body {
 .native-stage .menu {
   position: absolute;
   top: 37px;
-  right: 20px;
+  right: 54px;
   z-index: 1;
 }
-.stage-copy {
-  position: absolute;
-  left: 51px;
-  top: 106px;
-  text-align: left;
-}
-.stage-copy .eyebrow {
-  font-size: 10px;
-  margin-bottom: 14px;
-  color: #647f9d;
-}
-.stage-copy p {
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 1.7;
-  letter-spacing: -0.04em;
-  color: #3c587a;
-}
-.stage-copy .wave {
-  justify-content: flex-start;
-  color: #86a9d2;
-  margin-top: 10px;
-  height: 61px;
-}
+
 .hero .preview-note {
   margin: 10px 0 0;
 }
-.promise-strip {
-  max-width: 860px;
-  margin: 28px auto 0;
-  padding: 21px 0 28px;
-  border-bottom: 1px solid var(--rule);
-}
+
 .section.how {
   text-align: center;
 }
 .how .desc {
   max-width: 670px;
-  margin: 20px auto 33px;
+  margin: 18px auto;
 }
 .how .signal {
   padding: 35px 20px;
@@ -610,12 +533,7 @@ body {
 .use {
   background: var(--wash);
 }
-.case-no {
-  font-size: 11px;
-  color: #8395ab;
-  display: block;
-  margin-bottom: 22px;
-}
+
 .step-num {
   color: #2874ce;
 }
@@ -629,22 +547,15 @@ body {
   .hero {
     padding: 34px 0 0;
   }
-  .hero .hero-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    margin-bottom: 21px;
-  }
+
   .hero h1 {
     font-size: 35px;
     letter-spacing: -0.065em;
   }
-  .hero .eyebrow {
-    font-size: 9px;
-  }
+
   .hero .lede {
     margin: 21px auto 24px;
-    font-size: 12px;
+    font-size: 15px;
     max-width: 310px;
   }
   .native-stage {
@@ -664,32 +575,17 @@ body {
   .desktop-bar .status {
     gap: 7px;
   }
-  .stage-copy {
-    display: none;
-  }
+
   .hero .preview-note {
-    font-size: 9px;
+    font-size: 12px;
   }
-  .promise-strip {
-    padding-bottom: 20px;
-    margin-top: 22px;
-  }
-  .promise-strip .signal {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .promise-strip .signal > .source {
-    font-size: 9px;
-  }
+
   .how .signal {
     flex-wrap: wrap;
     gap: 10px;
   }
   .hero .meta {
-    font-size: 8px;
-  }
-  .case-no {
-    margin-bottom: 12px;
+    font-size: 12px;
   }
 }
 
@@ -746,9 +642,7 @@ summary {
 .hero h1 {
   overflow-wrap: normal;
 }
-.hero .hero-icon {
-  display: flex;
-}
+
 .hero .meta {
   margin-top: 17px;
 }
@@ -758,21 +652,11 @@ summary {
 .native-stage {
   height: 405px;
 }
-.stage-copy {
-  max-width: 390px;
-}
-.stage-copy .wave {
-  margin-left: 0;
-}
-.stage-copy .wave i {
-  width: 3px;
-}
+
 .native-stage .menu {
   width: 290px;
 }
-.native-stage .menu-version {
-  font-size: 8px;
-}
+
 .native-stage .menu-head {
   text-align: left;
 }
@@ -792,18 +676,7 @@ summary {
   max-width: 860px;
   margin: auto;
 }
-.promise-strip .signal {
-  font-size: 13px;
-}
-.promise-strip .audio-icon {
-  color: var(--muted);
-}
-.promise-strip .source {
-  gap: 8px;
-}
-.promise-strip .signal > strong:last-child {
-  color: #2770cf;
-}
+
 .section-head .desc {
   margin-top: 18px;
 }
@@ -857,7 +730,7 @@ summary {
   border-radius: 8px;
 }
 .flow-output small {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
 }
 .flow-arrow {
@@ -875,23 +748,14 @@ summary {
   grid-template-columns: 1fr 1fr;
   gap: 40px 64px;
 }
-.use-grid article {
-  border-top: 2px solid #293e58;
-  padding-top: 20px;
-}
-.case-no {
-  font-size: 11px;
-  color: var(--muted);
-  display: block;
-  margin-bottom: 20px;
-}
+
 .use-grid h3 {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 12px;
 }
 .use-grid .desc {
-  font-size: 13px;
+  font-size: 15px;
   max-width: 440px;
 }
 .setup-steps {
@@ -904,7 +768,7 @@ summary {
   font-weight: 600;
 }
 .setup-steps .desc {
-  font-size: 13px;
+  font-size: 15px;
   margin-top: 12px;
 }
 .setup-steps .step-num {
@@ -933,7 +797,7 @@ summary {
   border-left: 2px solid #bad0ee;
   padding-left: 18px;
   margin-top: 37px;
-  font-size: 11px;
+  font-size: 13px;
 }
 .privacy .section-head {
   margin-bottom: 30px;
@@ -965,7 +829,7 @@ summary {
 }
 .faq-list summary {
   cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.7;
   list-style: none;
@@ -990,7 +854,7 @@ summary {
 }
 .faq-list details > p,
 .faq-list details > ul {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 2;
   margin-top: 16px;
   color: var(--muted);
@@ -1060,19 +924,7 @@ code {
   .hero h1 {
     font-size: 55px;
   }
-  .native-stage .menu {
-    right: 18px;
-  }
-  .stage-copy {
-    left: 30px;
-    max-width: 310px;
-  }
-  .stage-copy p {
-    font-size: 19px;
-  }
-  .stage-copy .eyebrow {
-    font-size: 9px;
-  }
+
   .use-grid {
     gap: 35px 45px;
   }
@@ -1097,7 +949,7 @@ code {
     font-size: 15px;
   }
   .flow-output small {
-    font-size: 9px;
+    font-size: 12px;
   }
   .setup-steps {
     gap: 40px;
@@ -1132,10 +984,10 @@ code {
   }
   .hero .lede {
     max-width: 430px;
-    font-size: 12px;
+    font-size: 15px;
   }
   .hero .meta {
-    font-size: 9px;
+    font-size: 12px;
   }
   .hero h1 {
     font-size: 35px;
@@ -1145,9 +997,7 @@ code {
     line-height: 1.25;
     letter-spacing: -0.055em;
   }
-  :lang(en) .hero .eyebrow {
-    font-size: 8px;
-  }
+
   .native-stage {
     height: 405px;
   }
@@ -1157,47 +1007,17 @@ code {
     transform: translateX(50%);
     width: 265px;
   }
-  .promise-strip .signal {
-    font-size: 10px;
-    flex-wrap: nowrap;
-    gap: 10px;
-  }
-  .promise-strip .source {
-    font-size: 10px;
-    gap: 6px;
-  }
-  .promise-strip .source svg,
-  .promise-strip > .signal > svg {
-    width: 16px;
-    height: 16px;
-  }
-  .promise-strip .audio-icon {
-    width: 16px;
-    height: 11px;
-    border-width: 1.5px;
-  }
-  .promise-strip .audio-icon:after {
-    width: 8px;
-    bottom: -5px;
-  }
-  .promise-strip {
-    padding-top: 16px;
-  }
+
   .use-grid {
     grid-template-columns: 1fr;
     gap: 28px;
   }
-  .use-grid article {
-    padding-top: 19px;
-  }
-  .case-no {
-    margin-bottom: 12px;
-  }
+
   .use-grid h3 {
     font-size: 17px;
   }
   .use-grid .desc {
-    font-size: 12px;
+    font-size: 15px;
   }
   .audio-flow {
     grid-template-columns: 1fr;
@@ -1221,7 +1041,7 @@ code {
     font-size: 16px;
   }
   .flow-output small {
-    font-size: 10px;
+    font-size: 12px;
   }
   .flow-figure .preview-note {
     font-size: 9px;
@@ -1237,10 +1057,10 @@ code {
     font-size: 18px;
   }
   .setup-steps .desc {
-    font-size: 12px;
+    font-size: 15px;
   }
   .setup > .wrap > .notice {
-    font-size: 10px;
+    font-size: 13px;
   }
   .specs {
     grid-template-columns: 1fr 1fr;
@@ -1250,7 +1070,7 @@ code {
     font-size: 16px;
   }
   .privacy .notice {
-    font-size: 10px;
+    font-size: 13px;
   }
   .faq-layout {
     grid-template-columns: 1fr;
@@ -1260,11 +1080,11 @@ code {
     font-size: 27px;
   }
   .faq-list summary {
-    font-size: 13px;
+    font-size: 16px;
   }
   .faq-list details > p,
   .faq-list details > ul {
-    font-size: 11px;
+    font-size: 14px;
   }
   .end h2 {
     font-size: 26px;
@@ -1289,11 +1109,9 @@ code {
   :lang(en) .hero h1 {
     font-size: 33px;
   }
-  .hero .eyebrow {
-    font-size: 8px;
-  }
+
   .hero .meta {
-    font-size: 8px;
+    font-size: 12px;
   }
   .hero .cta {
     font-size: 11px;
@@ -1317,14 +1135,7 @@ code {
   .desktop-bar .status {
     gap: 6px;
   }
-  .promise-strip .signal {
-    gap: 8px;
-    font-size: 9px;
-  }
-  .promise-strip .source {
-    font-size: 9px;
-    gap: 4px;
-  }
+
   .setup .section-head h2 {
     font-size: 24px;
   }
@@ -1340,20 +1151,12 @@ code {
     --choice: #1d2531;
     --pick: #263f63;
   }
-  .hero h1 em {
-    color: #79abf0;
-  }
-  .hero .eyebrow {
-    color: var(--muted);
-  }
+
   .hero .meta {
     color: var(--muted);
   }
-  .use-grid article {
-    border-color: #7c93b2;
-  }
-  .setup-steps .step-num,
-  .promise-strip .signal > strong:last-child {
+
+  .setup-steps .step-num {
     color: #79abf0;
   }
   .native-stage {
@@ -1362,9 +1165,7 @@ code {
   .native-stage .menu {
     color: #26282c;
   }
-  .native-stage .menu-version {
-    color: #7d7f85;
-  }
+
   .native-stage .menu-hint {
     color: #777b83;
   }

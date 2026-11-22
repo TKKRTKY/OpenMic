@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1200" />
     <title>Open Mic — social preview</title>
-    <link rel="stylesheet" href="site.css?v=27" />
+    <link rel="stylesheet" href="site.css?v=28" />
     <style>
       /* Render at 1200 x 630; ?lang=ja selects Japanese. */
       :root {
@@ -41,10 +41,6 @@
         line-height: 1.26;
         letter-spacing: -0.055em;
         font-weight: 700;
-      }
-      .og-copy h1 em {
-        font-style: normal;
-        color: #3171c2;
       }
       :lang(ja) .og-copy h1 {
         font-size: 53px;
@@ -91,9 +87,6 @@
         text-align: center;
         margin-top: 15px;
       }
-      .og-product .menu-version {
-        color: #7d7f85;
-      }
       .og-product .menu-hint {
         color: #777b83;
       }
@@ -102,22 +95,16 @@
   <body>
     <div class="og-copy">
       <a class="brand" href="https://tkkrtky.github.io/OpenMic/"
-        ><span class="app-icon"
-          ><svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.7"
-            aria-hidden="true"
-          >
-            <rect x="9" y="3" width="6" height="11" rx="3" />
-            <path
-              d="M5.5 10.5v1a6.5 6.5 0 0 0 13 0v-1M12 18v3m-4 0h8"
-            /></svg></span
-        ><span>Open Mic</span></a
+        ><img
+          class="app-icon"
+          src="icon.png"
+          width="32"
+          height="32"
+          alt=""
+        /><span>Open Mic</span></a
       >
       <h1 id="og-headline">
-        Let your AI hear<br />the <em>whole<br />conversation.</em>
+        Let your AI hear<br />the whole<br />conversation.
       </h1>
       <p class="og-lede" id="og-lede">
         Your voice and your Mac’s audio.<br />One virtual microphone. No manual
@@ -130,22 +117,17 @@
         <div class="desktop-bar" aria-hidden="true">
           <span>Finder　 File　 Edit　 View</span
           ><span class="status"
-            ><svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.7"
-              aria-hidden="true"
-            >
-              <rect x="9" y="3" width="6" height="11" rx="3" />
-              <path d="M5.5 10.5v1a6.5 6.5 0 0 0 13 0v-1M12 18v3m-4 0h8" /></svg
-            ><span>Wi-Fi</span><span>14:32</span></span
+            ><img
+              class="menu-bar-icon"
+              src="menubar-item.png"
+              width="40"
+              height="16"
+              alt=""
+            /><span>Wi-Fi</span><span>14:32</span></span
           >
         </div>
         <div class="menu" aria-hidden="true">
-          <div class="menu-head">
-            Open Mic <span class="menu-version">Menu bar app</span>
-          </div>
+          <div class="menu-head">Open Mic</div>
           <div class="menu-sep"></div>
           <div class="menu-item"><span class="power-dot"></span>Turn Off</div>
           <div class="menu-hint">Microphone + system audio</div>
@@ -196,7 +178,7 @@
       if (new URLSearchParams(location.search).get("lang") === "ja") {
         document.documentElement.lang = "ja";
         document.getElementById("og-headline").innerHTML =
-          "AIに、会話の<br><em>ぜんぶ</em>を<br>聞かせる。";
+          "AIに、会話の<br>ぜんぶを<br>聞かせる。";
         document.getElementById("og-lede").innerHTML =
           "あなたの声と、Macから聞こえる声を、<br>ひとつの仮想マイクに。";
         document.getElementById("og-meta").textContent =
