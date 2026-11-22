@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1200" />
     <title>Open Mic — social preview</title>
-    <link rel="stylesheet" href="site.css?v=26" />
+    <link rel="stylesheet" href="site.css?v=27" />
     <style>
-      /* Render at 1200 x 630 with ?lang=ja for Japanese. */
+      /* Render at 1200 x 630; ?lang=ja selects Japanese. */
       :root {
         color-scheme: light;
       }
@@ -18,88 +18,84 @@
         overflow: hidden;
       }
       body {
-        background: #174789 !important;
-        color: #fff !important;
+        background: #fff !important;
+        color: #19222e !important;
         display: grid;
-        grid-template-columns: 1fr 460px;
-        gap: 50px;
+        grid-template-columns: 1fr 400px;
+        gap: 48px;
         align-items: center;
-        padding: 46px 52px;
+        padding: 54px 56px;
       }
       .og-copy .brand {
-        color: #fff;
-        font-size: 30px;
-        margin-bottom: 32px;
+        color: #19222e;
+        font-size: 27px;
+        margin-bottom: 45px;
       }
       .og-copy .app-icon {
-        background: #e4ef99;
-        color: #174789;
-        width: 35px;
-        height: 35px;
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
       }
       .og-copy h1 {
-        font-family:
-          Georgia, "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif CJK JP",
-          serif;
-        font-weight: 400;
-        font-size: 61px;
-        line-height: 1.13;
-        letter-spacing: -0.045em;
+        font-size: 57px;
+        line-height: 1.26;
+        letter-spacing: -0.055em;
+        font-weight: 700;
       }
-      .og-copy h1 span {
-        color: #e4ef99;
+      .og-copy h1 em {
+        font-style: normal;
+        color: #3171c2;
       }
       :lang(ja) .og-copy h1 {
         font-size: 53px;
-        line-height: 1.65;
-        letter-spacing: -0.065em;
+        line-height: 1.5;
       }
       .og-copy .og-lede {
-        font-size: 15px;
+        font-size: 16px;
         line-height: 1.9;
-        color: #d0e0f7;
-        max-width: 520px;
-        margin-top: 26px;
+        color: #596676;
+        max-width: 580px;
+        margin-top: 27px;
       }
       .og-copy .meta {
-        color: #bcd1ed;
+        color: #596676;
         font-size: 12px;
-        margin-top: 25px;
+        margin-top: 28px;
       }
-      .room {
-        height: 490px;
-        padding-left: 0;
-        gap: 21px;
+      .og-product {
+        margin: 0;
       }
-      .room:before {
-        left: 35px;
+      .og-product .native-stage {
+        width: 400px;
+        height: 420px;
+        max-width: none;
+        margin: 0;
+        border: 1px solid #dce6f2;
+        border-radius: 15px;
       }
-      .speech .quote {
-        font-size: 22px;
-        line-height: 1.6;
+      .og-product .native-stage .menu {
+        top: 54px;
+        right: 54px;
+        width: 290px;
+        text-align: left;
+        color: #26282c;
       }
-      .room-output {
-        margin-left: 20px;
+      .og-product .desktop-bar {
+        font-size: 8px;
+        padding: 0 13px;
       }
-      .room-output strong {
-        font-size: 15px;
-      }
-      .room-output p {
+      .og-product figcaption {
+        color: #596676;
         font-size: 10px;
-        color: #c8daf4;
+        line-height: 1.8;
+        text-align: center;
+        margin-top: 15px;
       }
-      .room-output .circle {
-        background: #e4ef99;
-        color: #174789;
+      .og-product .menu-version {
+        color: #7d7f85;
       }
-      .room-caption {
-        display: none;
-      }
-      .room-output svg {
-        color: inherit;
-      }
-      .room-output .circle svg {
-        color: #174789;
+      .og-product .menu-hint {
+        color: #777b83;
       }
     </style>
   </head>
@@ -121,7 +117,7 @@
         ><span>Open Mic</span></a
       >
       <h1 id="og-headline">
-        Let your AI hear<br />the <span>whole<br />conversation.</span>
+        Let your AI hear<br />the <em>whole<br />conversation.</em>
       </h1>
       <p class="og-lede" id="og-lede">
         Your voice and your Mac’s audio.<br />One virtual microphone. No manual
@@ -129,71 +125,86 @@
       </p>
       <p class="meta" id="og-meta">Free / macOS 14.2+ / No account</p>
     </div>
-    <figure class="room">
-      <div class="speech">
-        <p class="speaker">Remote teammate · Mac audio</p>
-        <span class="who" aria-hidden="true">B</span>
-        <p class="quote">“This part could be<br />a little simpler.”</p>
-      </div>
-      <div class="speech">
-        <p class="speaker">You · Microphone</p>
-        <span class="who" aria-hidden="true">A</span>
-        <p class="quote">“Agreed. Let’s keep<br />this headline, though.”</p>
-      </div>
-      <div class="room-output">
-        <span class="circle"
-          ><svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.7"
-            aria-hidden="true"
+    <figure class="og-product">
+      <div class="native-stage">
+        <div class="desktop-bar" aria-hidden="true">
+          <span>Finder　 File　 Edit　 View</span
+          ><span class="status"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              aria-hidden="true"
+            >
+              <rect x="9" y="3" width="6" height="11" rx="3" />
+              <path d="M5.5 10.5v1a6.5 6.5 0 0 0 13 0v-1M12 18v3m-4 0h8" /></svg
+            ><span>Wi-Fi</span><span>14:32</span></span
           >
-            <rect x="9" y="3" width="6" height="11" rx="3" />
-            <path d="M5.5 10.5v1a6.5 6.5 0 0 0 13 0v-1M12 18v3m-4 0h8" /></svg
-        ></span>
-        <div>
-          <strong>Both sides of the conversation.</strong>
-          <p>One audio input, with Open Mic.</p>
         </div>
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          aria-hidden="true"
-        >
-          <path d="M4 12h15m-6-6 6 6-6 6" />
-        </svg>
+        <div class="menu" aria-hidden="true">
+          <div class="menu-head">
+            Open Mic <span class="menu-version">Menu bar app</span>
+          </div>
+          <div class="menu-sep"></div>
+          <div class="menu-item"><span class="power-dot"></span>Turn Off</div>
+          <div class="menu-hint">Microphone + system audio</div>
+          <div class="menu-level">
+            <span>Microphone</span><span class="meter"><i></i></span>
+          </div>
+          <div class="menu-level">
+            <span>System audio</span><span class="meter system"><i></i></span>
+          </div>
+          <div class="menu-sep"></div>
+          <div class="menu-hint">Microphone source</div>
+          <div class="menu-item">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              aria-hidden="true"
+            >
+              <path d="m5 12 4 4L19 6" /></svg
+            >MacBook Pro Microphone
+          </div>
+          <div class="menu-item">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              aria-hidden="true"
+            >
+              <path d="m5 12 4 4L19 6" /></svg
+            >Open at Login
+          </div>
+          <div class="menu-sep"></div>
+          <div class="menu-hint">
+            Select “Open Mic” as the microphone<br />in your AI app
+          </div>
+          <div class="menu-foot">
+            <span>Updates</span><span>Feedback</span><span>Quit</span>
+          </div>
+        </div>
       </div>
-      <figcaption class="room-caption">
-        Illustrated use case. Transcription and replies are handled by your AI
-        app.
+      <figcaption id="og-caption">
+        A small menu bar app for macOS. UI illustration.
       </figcaption>
     </figure>
     <script>
-      const japanese =
-        new URLSearchParams(location.search).get("lang") === "ja";
-      if (japanese) {
+      if (new URLSearchParams(location.search).get("lang") === "ja") {
         document.documentElement.lang = "ja";
         document.getElementById("og-headline").innerHTML =
-          "AIに、会話の<br><span>ぜんぶ</span>を<br>聞かせる。";
+          "AIに、会話の<br><em>ぜんぶ</em>を<br>聞かせる。";
         document.getElementById("og-lede").innerHTML =
           "あなたの声と、Macから聞こえる声を、<br>ひとつの仮想マイクに。";
         document.getElementById("og-meta").textContent =
           "無料 / macOS 14.2以降 / アカウント不要";
-        const speakers = document.querySelectorAll(".speaker");
-        speakers[0].textContent = "リモートの相手 · Macの音";
-        speakers[1].textContent = "あなた · マイクの声";
-        const quotes = document.querySelectorAll(".quote");
-        quotes[0].innerHTML = "「ここ、もう少し<br>シンプルにできそう。」";
-        quotes[1].innerHTML = "「いいね。見出しは<br>今のまま残そう。」";
-        document.querySelector(".room-output strong").textContent =
-          "ふたりの会話を、AIへ。";
-        document.querySelector(".room-output p").textContent =
-          "Open Micで、音声入力をひとつに。";
-        document.querySelector(".room-caption").textContent =
-          "利用シーンのイメージ。";
+        document.getElementById("og-caption").textContent =
+          "Macのメニューバーに、小さな道具を。操作イメージ。";
+        document.querySelector(".menu-version").textContent =
+          "メニューバーアプリ";
       }
     </script>
   </body>
