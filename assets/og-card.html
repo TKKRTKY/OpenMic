@@ -1,51 +1,200 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=1200">
-<title>Open Mic — social preview</title>
-<link rel="stylesheet" href="site.css?v=25">
-<style>
-  /* Render at 1200 × 630, light mode, with ?lang=ja for the Japanese card. */
-  :root { color-scheme: light; --bg: #f7f8f5; --paper: #fff; --ink: #171b18; --muted: #656c66; --green: #38651f; }
-  html, body { width: 1200px; height: 630px; margin: 0; overflow: hidden; }
-  body { display: grid; grid-template-columns: 1fr 450px; align-items: center; gap: 58px; padding: 52px 60px; }
-  .brand { margin-bottom: 42px; font-size: 30px; }
-  h1 { font-size: 78px; margin-bottom: 30px; }
-  :lang(ja) h1 { font-size: 63px; }
-  .meta { font-size: 13px; }
-  .signal { padding: 24px; }
-</style>
-</head>
-<body>
-<div>
-  <div class="brand"><span class="signal-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>Open Mic</div>
-  <h1 id="headline">Your voice.<br><span class="soft">Your Mac.</span><br><span class="highlight">One input.</span></h1>
-  <p class="meta" id="info">Free / macOS 14.2+ / No account</p>
-</div>
-<figure class="signal" aria-label="Signal path: your microphone and Mac audio combine into the Open Mic virtual microphone, which your audio app receives as one input.">
-      <div class="signal-top"><span>SIGNAL PATH / 001</span><span class="indicator">2 IN → 1 OUT</span></div>
-      <div class="channels">
-        <div class="channel"><div class="channel-label"><span>Your microphone</span><small>INPUT 01</small></div><div class="wave" aria-hidden="true"><i style="--h:10px"></i><i style="--h:16px"></i><i style="--h:8px"></i><i style="--h:24px"></i><i style="--h:18px"></i><i style="--h:36px"></i><i style="--h:22px"></i><i style="--h:46px"></i><i style="--h:32px"></i><i style="--h:20px"></i><i style="--h:40px"></i><i style="--h:26px"></i><i style="--h:16px"></i><i style="--h:30px"></i><i style="--h:44px"></i><i style="--h:20px"></i><i style="--h:36px"></i><i style="--h:14px"></i><i style="--h:24px"></i><i style="--h:38px"></i><i style="--h:18px"></i><i style="--h:28px"></i><i style="--h:12px"></i><i style="--h:22px"></i><i style="--h:8px"></i><i style="--h:16px"></i><i style="--h:28px"></i><i style="--h:42px"></i><i style="--h:24px"></i><i style="--h:14px"></i><i style="--h:34px"></i><i style="--h:18px"></i><i style="--h:10px"></i><i style="--h:20px"></i><i style="--h:30px"></i><i style="--h:14px"></i></div></div>
-        <div class="channel system"><div class="channel-label"><span>Your Mac’s audio</span><small>INPUT 02</small></div><div class="wave" aria-hidden="true"><i style="--h:26px"></i><i style="--h:16px"></i><i style="--h:30px"></i><i style="--h:44px"></i><i style="--h:20px"></i><i style="--h:36px"></i><i style="--h:14px"></i><i style="--h:24px"></i><i style="--h:38px"></i><i style="--h:18px"></i><i style="--h:28px"></i><i style="--h:12px"></i><i style="--h:22px"></i><i style="--h:8px"></i><i style="--h:16px"></i><i style="--h:28px"></i><i style="--h:42px"></i><i style="--h:24px"></i><i style="--h:14px"></i><i style="--h:34px"></i><i style="--h:18px"></i><i style="--h:10px"></i><i style="--h:20px"></i><i style="--h:30px"></i><i style="--h:14px"></i><i style="--h:10px"></i><i style="--h:16px"></i><i style="--h:8px"></i><i style="--h:24px"></i><i style="--h:18px"></i><i style="--h:36px"></i><i style="--h:22px"></i><i style="--h:46px"></i><i style="--h:32px"></i><i style="--h:20px"></i><i style="--h:40px"></i></div></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1200" />
+    <title>Open Mic — social preview</title>
+    <link rel="stylesheet" href="site.css?v=26" />
+    <style>
+      /* Render at 1200 x 630 with ?lang=ja for Japanese. */
+      :root {
+        color-scheme: light;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        margin: 0;
+        overflow: hidden;
+      }
+      body {
+        background: #174789 !important;
+        color: #fff !important;
+        display: grid;
+        grid-template-columns: 1fr 460px;
+        gap: 50px;
+        align-items: center;
+        padding: 46px 52px;
+      }
+      .og-copy .brand {
+        color: #fff;
+        font-size: 30px;
+        margin-bottom: 32px;
+      }
+      .og-copy .app-icon {
+        background: #e4ef99;
+        color: #174789;
+        width: 35px;
+        height: 35px;
+      }
+      .og-copy h1 {
+        font-family:
+          Georgia, "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif CJK JP",
+          serif;
+        font-weight: 400;
+        font-size: 61px;
+        line-height: 1.13;
+        letter-spacing: -0.045em;
+      }
+      .og-copy h1 span {
+        color: #e4ef99;
+      }
+      :lang(ja) .og-copy h1 {
+        font-size: 53px;
+        line-height: 1.65;
+        letter-spacing: -0.065em;
+      }
+      .og-copy .og-lede {
+        font-size: 15px;
+        line-height: 1.9;
+        color: #d0e0f7;
+        max-width: 520px;
+        margin-top: 26px;
+      }
+      .og-copy .meta {
+        color: #bcd1ed;
+        font-size: 12px;
+        margin-top: 25px;
+      }
+      .room {
+        height: 490px;
+        padding-left: 0;
+        gap: 21px;
+      }
+      .room:before {
+        left: 35px;
+      }
+      .speech .quote {
+        font-size: 22px;
+        line-height: 1.6;
+      }
+      .room-output {
+        margin-left: 20px;
+      }
+      .room-output strong {
+        font-size: 15px;
+      }
+      .room-output p {
+        font-size: 10px;
+        color: #c8daf4;
+      }
+      .room-output .circle {
+        background: #e4ef99;
+        color: #174789;
+      }
+      .room-caption {
+        display: none;
+      }
+      .room-output svg {
+        color: inherit;
+      }
+      .room-output .circle svg {
+        color: #174789;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="og-copy">
+      <a class="brand" href="https://tkkrtky.github.io/OpenMic/"
+        ><span class="app-icon"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            aria-hidden="true"
+          >
+            <rect x="9" y="3" width="6" height="11" rx="3" />
+            <path
+              d="M5.5 10.5v1a6.5 6.5 0 0 0 13 0v-1M12 18v3m-4 0h8"
+            /></svg></span
+        ><span>Open Mic</span></a
+      >
+      <h1 id="og-headline">
+        Let your AI hear<br />the <span>whole<br />conversation.</span>
+      </h1>
+      <p class="og-lede" id="og-lede">
+        Your voice and your Mac’s audio.<br />One virtual microphone. No manual
+        routing.
+      </p>
+      <p class="meta" id="og-meta">Free / macOS 14.2+ / No account</p>
+    </div>
+    <figure class="room">
+      <div class="speech">
+        <p class="speaker">Remote teammate · Mac audio</p>
+        <span class="who" aria-hidden="true">B</span>
+        <p class="quote">“This part could be<br />a little simpler.”</p>
       </div>
-      <div class="junction" aria-hidden="true"></div>
-      <div class="output"><span class="signal-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><div><strong>Open Mic</strong><small>One virtual microphone</small></div><span class="out-arrow" aria-hidden="true">↗</span></div>
-      <figcaption class="signal-bottom"><span>TO YOUR TRANSCRIPTION TOOL / AI APP</span><span>SIGNAL ILLUSTRATION</span></figcaption>
+      <div class="speech">
+        <p class="speaker">You · Microphone</p>
+        <span class="who" aria-hidden="true">A</span>
+        <p class="quote">“Agreed. Let’s keep<br />this headline, though.”</p>
+      </div>
+      <div class="room-output">
+        <span class="circle"
+          ><svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            aria-hidden="true"
+          >
+            <rect x="9" y="3" width="6" height="11" rx="3" />
+            <path d="M5.5 10.5v1a6.5 6.5 0 0 0 13 0v-1M12 18v3m-4 0h8" /></svg
+        ></span>
+        <div>
+          <strong>Both sides of the conversation.</strong>
+          <p>One audio input, with Open Mic.</p>
+        </div>
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <path d="M4 12h15m-6-6 6 6-6 6" />
+        </svg>
+      </div>
+      <figcaption class="room-caption">
+        Illustrated use case. Transcription and replies are handled by your AI
+        app.
+      </figcaption>
     </figure>
-<script>
-  const japanese = new URLSearchParams(location.search).get("lang") === "ja";
-  if (japanese) {
-    document.documentElement.lang = "ja";
-    document.getElementById("headline").innerHTML = 'マイクの声も、<br><span class="soft">Macの音も。</span><br><span class="highlight">ひとつに。</span>';
-    document.getElementById("info").textContent = "無料 / macOS 14.2以降 / アカウント不要";
-    document.querySelector(".channel-label span").textContent = "マイクの声";
-    document.querySelector(".system .channel-label span").textContent = "Macの音";
-    document.querySelector(".output small").textContent = "ひとつの仮想マイク";
-    document.querySelector(".signal-bottom span").textContent = "文字起こしツール / AIアプリへ";
-    document.querySelector(".signal-bottom span:last-child").textContent = "音声フローのイメージ";
-    document.querySelector(".signal").setAttribute("aria-label", "マイクとMacの音を、ひとつの仮想マイクにミックス");
-  }
-</script>
-</body>
+    <script>
+      const japanese =
+        new URLSearchParams(location.search).get("lang") === "ja";
+      if (japanese) {
+        document.documentElement.lang = "ja";
+        document.getElementById("og-headline").innerHTML =
+          "AIに、会話の<br><span>ぜんぶ</span>を<br>聞かせる。";
+        document.getElementById("og-lede").innerHTML =
+          "あなたの声と、Macから聞こえる声を、<br>ひとつの仮想マイクに。";
+        document.getElementById("og-meta").textContent =
+          "無料 / macOS 14.2以降 / アカウント不要";
+        const speakers = document.querySelectorAll(".speaker");
+        speakers[0].textContent = "リモートの相手 · Macの音";
+        speakers[1].textContent = "あなた · マイクの声";
+        const quotes = document.querySelectorAll(".quote");
+        quotes[0].innerHTML = "「ここ、もう少し<br>シンプルにできそう。」";
+        quotes[1].innerHTML = "「いいね。見出しは<br>今のまま残そう。」";
+        document.querySelector(".room-output strong").textContent =
+          "ふたりの会話を、AIへ。";
+        document.querySelector(".room-output p").textContent =
+          "Open Micで、音声入力をひとつに。";
+        document.querySelector(".room-caption").textContent =
+          "利用シーンのイメージ。";
+      }
+    </script>
+  </body>
 </html>
