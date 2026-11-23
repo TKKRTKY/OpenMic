@@ -1,73 +1,74 @@
 <!doctype html>
+
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Open Mic — AIに、会話のぜんぶを聞かせる。</title>
     <meta
-      name="description"
       content="あなたの声と、Macから聞こえる声を、ひとつの仮想マイクに。AIとのチームレビュー、会議の議事録、モブプログラミングに。面倒な音声ルーティングは不要。無料、macOS 14.2以降、アカウント不要。"
+      name="description"
     />
-    <link rel="icon" href="../assets/icon-180.png" />
-    <link rel="apple-touch-icon" href="../assets/icon-180.png" />
-    <link rel="stylesheet" href="../assets/site.css?v=28" />
-    <link rel="canonical" href="https://tkkrtky.github.io/OpenMic/ja/" />
+    <link href="../assets/icon-180.png" rel="icon" />
+    <link href="../assets/icon-180.png" rel="apple-touch-icon" />
+    <link href="../assets/site.css?v=29" rel="stylesheet" />
+    <link href="https://tkkrtky.github.io/OpenMic/ja/" rel="canonical" />
     <link
-      rel="alternate"
+      href="https://tkkrtky.github.io/OpenMic/"
       hreflang="en"
-      href="https://tkkrtky.github.io/OpenMic/"
+      rel="alternate"
     />
     <link
-      rel="alternate"
-      hreflang="ja"
       href="https://tkkrtky.github.io/OpenMic/ja/"
+      hreflang="ja"
+      rel="alternate"
     />
     <link
-      rel="alternate"
-      hreflang="x-default"
       href="https://tkkrtky.github.io/OpenMic/"
+      hreflang="x-default"
+      rel="alternate"
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Open Mic" />
-    <meta property="og:url" content="https://tkkrtky.github.io/OpenMic/ja/" />
-    <meta property="og:locale" content="ja_JP" />
-    <meta property="og:locale:alternate" content="en_US" />
+    <meta content="website" property="og:type" />
+    <meta content="Open Mic" property="og:site_name" />
+    <meta content="https://tkkrtky.github.io/OpenMic/ja/" property="og:url" />
+    <meta content="ja_JP" property="og:locale" />
+    <meta content="en_US" property="og:locale:alternate" />
     <!-- 製品名だけにする。見出しはカード画像側にあり、タイトルは画像の直下に
      表示されるので、両方に置くと同じ一文を二度読ませることになる。 -->
-    <meta property="og:title" content="Open Mic" />
+    <meta content="Open Mic" property="og:title" />
     <meta
-      property="og:description"
       content="あなたの声と、Macから聞こえる声を、ひとつの仮想マイクにミックス。無料、macOS 14.2以降、アカウント不要。"
+      property="og:description"
     />
     <!-- 絶対URL。クローラには相対パスを解決する基準がない。1.91:1のカード用に作った画像で、正方形のアプリアイコンは余白だらけになっていた。 -->
     <meta
+      content="https://tkkrtky.github.io/OpenMic/assets/og-ja.png"
       property="og:image"
-      content="https://tkkrtky.github.io/OpenMic/assets/og-ja.png"
     />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
     <meta
-      property="og:image:alt"
       content="AIに、会話のぜんぶを聞かせる。— 自分の声とMacから聞こえる声を、Open Micでひとつの音声入力に。"
+      property="og:image:alt"
     />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Open Mic" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="Open Mic" name="twitter:title" />
     <meta
-      name="twitter:description"
       content="あなたの声と、Macから聞こえる声を、ひとつの仮想マイクにミックス。"
+      name="twitter:description"
     />
     <meta
-      name="twitter:image"
       content="https://tkkrtky.github.io/OpenMic/assets/og-ja.png"
+      name="twitter:image"
     />
     <!-- Visit counts only: no cookies, no personal data, so no consent banner.
      The token is public by design — it ships in the page for every visitor to
      see, which is why it lives here rather than anywhere secret. -->
     <script
-      type="module"
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js"
       data-cf-beacon='{"token": "2212ae100c27410ea55037fcbdcbeb27"}'
+      defer=""
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      type="module"
     ></script>
     <script type="application/ld+json">
       {
@@ -91,517 +92,447 @@
   </head>
   <body>
     <a class="skip" href="#main">本文へスキップ</a>
-    <header id="top" class="wrap">
-      <div class="nav">
-        <a class="brand" href="./"
-          ><img
-            class="app-icon"
-            src="../assets/icon.png"
-            width="32"
-            height="32"
-            alt=""
-          /><span>Open Mic</span></a
+    <header class="wrap">
+      <div class="top">
+        <span class="brand"
+          ><img alt="" src="../assets/icon.png" />Open Mic</span
         >
-        <nav class="navlinks" aria-label="メインナビゲーション">
-          <a href="#how">仕組み</a><a href="#setup">使い方</a
-          ><a href="#privacy">プライバシー</a>
-          <div class="languages" aria-label="Language">
-            <a href="../" lang="en" hreflang="en">EN</a
-            ><a href="./" lang="ja" hreflang="ja" aria-current="page">日本語</a>
-          </div>
-        </nav>
+
+        <div class="top-actions">
+          <nav aria-label="言語" class="lang">
+            <a href="../" hreflang="en" lang="en">English</a>
+            <a aria-current="page" href="./" hreflang="ja" lang="ja">日本語</a>
+          </nav>
+          <a
+            class="button header-download"
+            href="https://github.com/TKKRTKY/OpenMic/releases/latest/download/OpenMic.pkg"
+            >ダウンロード</a
+          >
+        </div>
       </div>
     </header>
-    <main id="main">
-      <section class="hero" aria-labelledby="headline">
-        <div class="wrap">
-          <h1 id="headline">AIに、会話の<br />ぜんぶを聞かせる。</h1>
-          <p class="lede">
-            あなたの声と、Macから聞こえる声を、ひとつの仮想マイクに。面倒な音声ルーティングは必要ありません。
-          </p>
-          <div class="hero-actions">
-            <a
-              class="cta"
-              href="https://github.com/TKKRTKY/OpenMic/releases/latest/download/OpenMic.pkg"
-              ><svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                aria-hidden="true"
-              >
-                <path d="M12 3v12m-4-4 4 4 4-4M5 17v4h14v-4" /></svg
-              ><span>macOS版をダウンロード</span></a
-            >
-          </div>
-          <p class="meta">
-            無料 <span>/</span> macOS 14.2以降 <span>/</span> アカウント不要
-          </p>
-          <figure class="product-preview">
-            <div
-              role="img"
-              aria-label="Open Micの操作イメージ。実際のスクリーンショットではありません。"
-            >
-              <div class="native-stage">
-                <div class="desktop-bar" aria-hidden="true">
-                  <span>Finder　 ファイル　 編集　 表示</span
-                  ><span class="status"
-                    ><img
-                      class="menu-bar-icon"
-                      src="../assets/menubar-item.png"
-                      width="40"
-                      height="16"
-                      alt=""
-                    /><span>Wi-Fi</span><span>14:32</span></span
-                  >
-                </div>
 
-                <div class="menu" aria-hidden="true">
-                  <div class="menu-head">Open Mic</div>
-                  <div class="menu-sep"></div>
-                  <div class="menu-item">
-                    <span class="power-dot"></span>Turn Off
+    <main id="main">
+      <div class="wrap">
+        <div aria-labelledby="headline" class="hero">
+          <div class="hero-copy">
+            <h1 id="headline">AIに、会話の<br />ぜんぶを聞かせる。</h1>
+            <p class="lede">
+              あなたの声と、Macから聞こえる声を、ひとつの仮想マイクに。面倒な音声ルーティングは必要ありません。
+            </p>
+            <div class="actions">
+              <a
+                class="button"
+                href="https://github.com/TKKRTKY/OpenMic/releases/latest/download/OpenMic.pkg"
+                >ダウンロード</a
+              >
+              <a class="button ghost" href="#how">仕組み</a>
+            </div>
+            <p class="meta">
+              <span>無料</span><span class="dot">·</span
+              ><span>macOS 14.2以降</span><span class="dot">·</span
+              ><span>アカウント不要</span>
+            </p>
+          </div>
+          <div
+            aria-label="操作イメージ：メニューバーで動作しているOpen Mic。マイクとMacの音のレベルが別々に表示されている"
+            class="mock"
+            role="img"
+          >
+            <div class="mock-menubar">
+              <img alt="" src="../assets/menubar-item.png" />
+              <span class="chip"></span><span class="chip"></span
+              ><span>14:32</span>
+            </div>
+            <div class="mock-body">
+              <div class="menu">
+                <div class="head">
+                  <span>Open Mic</span><span class="ver">0.4.0 (5)</span>
+                </div>
+                <div class="sep"></div>
+                <div class="toggle"><span class="dot"></span>Turn Off</div>
+                <div class="status">Microphone + system audio</div>
+                <div class="levels">
+                  <div class="level">
+                    <span class="name">Microphone</span
+                    ><span class="track"
+                      ><span class="fill" style="width: 78%"></span
+                    ></span>
                   </div>
-                  <div class="menu-hint">Microphone + system audio</div>
-                  <div class="menu-level">
-                    <span>Microphone</span><span class="meter"><i></i></span>
+                  <div class="level">
+                    <span class="name">System audio</span
+                    ><span class="track"
+                      ><span class="fill sage" style="width: 52%"></span
+                    ></span>
                   </div>
-                  <div class="menu-level">
-                    <span>System audio</span
-                    ><span class="meter system"><i></i></span>
-                  </div>
-                  <div class="menu-sep"></div>
-                  <div class="menu-hint">Microphone source</div>
-                  <div class="menu-item">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.8"
-                      aria-hidden="true"
-                    >
-                      <path d="m5 12 4 4L19 6" /></svg
-                    >MacBook Pro Microphone
-                  </div>
-                  <div class="menu-item">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.8"
-                      aria-hidden="true"
-                    >
-                      <path d="m5 12 4 4L19 6" /></svg
-                    >Open at Login
-                  </div>
-                  <div class="menu-sep"></div>
-                  <div class="menu-hint">
-                    Select “Open Mic” as the microphone<br />in your AI app
-                  </div>
-                  <div class="menu-foot">
-                    <span>Updates</span><span>Feedback</span><span>Quit</span>
-                  </div>
+                </div>
+                <div class="sep"></div>
+                <div class="field">Microphone source</div>
+                <div class="opt"><span class="tick"></span>System default</div>
+                <div class="opt sel">
+                  <span class="tick"></span>MacBook Pro Microphone
+                </div>
+                <div class="check">
+                  <span class="box">☑</span>Open at Login
+                </div>
+                <div class="sep"></div>
+                <div class="hint">
+                  Select “Open Mic” as the microphone in your AI app
+                </div>
+                <div class="links">
+                  <span>Updates</span><span>Feedback</span
+                  ><span class="end">Quit</span>
                 </div>
               </div>
             </div>
-            <figcaption class="preview-note">
-              Open Micの操作イメージ。実際のスクリーンショットではありません。
-            </figcaption>
-          </figure>
+          </div>
         </div>
-      </section>
-      <section class="section how" id="how">
-        <div class="wrap">
-          <div class="section-head">
+      </div>
+      <section id="how">
+        <div class="wrap sec-head split-head">
+          <div class="section-title">
+            <p class="eyebrow">仕組み</p>
             <h2>2つの音を、ひとつのマイクに。</h2>
-            <p class="desc">
+          </div>
+          <div class="section-copy">
+            <p class="sub">
               多くのAIアプリが利用するマイク入力は、ひとつです。あなたの声は届いても、Macから再生される相手の声は届きません。
             </p>
-            <p class="desc">
+            <p class="sub">
               Open
               Micは、あなたのマイクとMacの音をミックスし、通常のマイク入力としてアプリへ届けます。
             </p>
           </div>
-          <figure class="flow-figure">
-            <ol class="audio-flow">
-              <li class="source-pair">
-                <div class="source">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.7"
-                    aria-hidden="true"
-                  >
-                    <rect x="9" y="3" width="6" height="11" rx="3" />
-                    <path
-                      d="M5.5 10.5v1a6.5 6.5 0 0 0 13 0v-1M12 18v3m-4 0h8"
-                    /></svg
-                  ><span>あなたの声</span>
-                </div>
-                <span class="plus" aria-hidden="true">+</span>
-                <div class="source">
-                  <span class="audio-icon" aria-hidden="true"></span
-                  ><span>Macの音</span>
-                </div>
-              </li>
-              <li class="flow-arrow" aria-hidden="true">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  aria-hidden="true"
-                >
-                  <path d="M4 12h15m-6-6 6 6-6 6" />
-                </svg>
-              </li>
-              <li class="flow-output">
-                <img
-                  class="app-icon"
-                  src="../assets/icon.png"
-                  width="32"
-                  height="32"
-                  alt=""
-                /><strong>Open Mic</strong><small>ひとつの仮想マイク</small>
-              </li>
-              <li class="flow-arrow" aria-hidden="true">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  aria-hidden="true"
-                >
-                  <path d="M4 12h15m-6-6 6 6-6 6" />
-                </svg>
-              </li>
-              <li class="flow-output">
-                <strong>AIアプリ</strong><small>音声入力に選ぶ</small>
-              </li>
-            </ol>
-            <figcaption class="preview-note">
-              音声の流れを示す説明図。文字起こし・要約・回答は、入力先のアプリが行います。
-            </figcaption>
-          </figure>
         </div>
-      </section>
-      <section class="section use" id="use">
-        <div class="wrap">
-          <div class="section-head">
-            <h2>誰もが、AIのマイクの前に立てる。</h2>
-          </div>
-          <div class="use-grid">
-            <article>
-              <h3>AIの成果物を、チームでレビュー</h3>
-              <p class="desc">
-                チームのフィードバックを、音声入力できるAIエージェントへ直接。レビューのたびに、議論をプロンプトに書き直す手間を減らします。
-              </p>
-            </article>
-            <article>
-              <h3>会議を、まるごとAI議事録へ</h3>
-              <p class="desc">
-                自分の声だけでなく、リモートの相手の発言も。会話の両側を、いつもの議事録アプリへ渡せます。
-              </p>
-            </article>
-            <article>
-              <h3>AIとのモブプログラミングに</h3>
-              <p class="desc">
-                コードについて話す声も、Macで鳴る音も。ペアプロやモブプロの会話を、音声対応のAIエージェントと共有できます。
-              </p>
-            </article>
-            <article>
-              <h3>会話の文字起こしに</h3>
-              <p class="desc">
-                あなたのマイクとMacから聞こえる声を、ひとつの入力として文字起こしツールへ。複数の音声デバイスを組み合わせる設定は不要です。
-              </p>
-            </article>
+        <div class="wrap" style="margin-top: 44px">
+          <div class="flow">
+            <div class="side left">
+              <div class="pair">
+                <div class="node">あなたのマイク</div>
+                <div class="node">Macの音</div>
+              </div>
+              <span class="arrow">→</span>
+            </div>
+            <div class="node primary">
+              <img alt="" src="../assets/icon.png" />Open Mic
+            </div>
+            <div class="side right">
+              <span class="arrow">→</span>
+              <div class="node">AIアプリ</div>
+            </div>
           </div>
         </div>
       </section>
-      <section class="section setup" id="setup">
-        <div class="wrap">
-          <div class="section-head">
+      <section id="setup">
+        <div class="wrap sec-head split-head">
+          <div class="section-title">
+            <p class="eyebrow">セットアップ</p>
             <h2>2ステップ。あとはずっとそのまま。</h2>
-            <p class="desc">
-              出力先も音量キーもヘッドフォンも、今までどおりです。
+          </div>
+          <div class="section-copy">
+            <p class="sub">
+              初回は、マイクと画面収録の権限を許可します。画面収録の許可はMacの音を取得するためのもので、画面の映像は取得・録画しません。
             </p>
           </div>
-          <ol class="setup-steps">
-            <li class="step">
-              <span class="step-num" aria-hidden="true">01</span>
+        </div>
+        <div class="wrap">
+          <div class="steps">
+            <div class="step">
+              <div class="num">01</div>
               <h3>Open MicをONにする</h3>
-              <p class="desc">
-                インストール後、マイクと画面収録の権限を許可。メニューバーからOpen
-                MicをONにします。画面収録の許可はシステム音声の取得用で、画面を録画することはありません。
-              </p>
               <div
-                class="small-choice"
+                aria-label="Open Micのパネル。OFFの状態"
+                class="shot"
                 role="img"
-                aria-label="Open MicをONにする"
               >
-                <div>メニューバー</div>
-                <strong
-                  ><span>Open Mic — Turn Off</span
-                  ><svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    aria-hidden="true"
-                  >
-                    <path d="m5 12 4 4L19 6" /></svg
-                ></strong>
+                <div class="cap">メニューバー</div>
+                <div class="item off">
+                  <span class="dot"></span><span>Turn On</span>
+                </div>
+                <div class="minilevel">
+                  <span class="name">Microphone</span
+                  ><span class="track"></span>
+                </div>
+                <div class="minilevel">
+                  <span class="name">System audio</span
+                  ><span class="track"></span>
+                </div>
               </div>
-            </li>
-            <li class="step">
-              <span class="step-num" aria-hidden="true">02</span>
-              <h3>AIアプリの入力に選ぶ</h3>
-              <p class="desc">
-                使いたいAIアプリのマイク入力で「Open
-                Mic」を選択。あなたの声も、相手の声も、まとめて届きます。
+              <p class="sub">
+                出力先も音量キーもヘッドフォンも、今までどおり動きます。
               </p>
+            </div>
+            <div class="step">
+              <div class="num">02</div>
+              <h3>AIアプリの音声入力で「Open Mic」を選ぶ</h3>
               <div
-                class="small-choice"
+                aria-label="アプリのマイク一覧。Open Micが選択されている"
+                class="shot"
                 role="img"
-                aria-label="AIアプリの入力に選ぶ"
               >
-                <div>AIアプリ · マイク入力</div>
-                <strong
-                  ><span>Open Mic</span
-                  ><svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    aria-hidden="true"
-                  >
-                    <path d="m5 12 4 4L19 6" /></svg
-                ></strong>
+                <div class="cap">AIアプリ · マイク</div>
+                <div class="item mut"><span>MacBook Proのマイク</span></div>
+                <div class="item sel">
+                  <span>Open Mic</span><span class="tick">✓</span>
+                </div>
+                <div class="item mut"><span>外部ヘッドフォン</span></div>
               </div>
-            </li>
-          </ol>
+              <p class="sub">
+                使いたいAIアプリの音声入力で「Open
+                Mic」を選べば、あなたの声もMacの音も、まとめてAIに届きます。
+              </p>
+            </div>
+          </div>
           <p class="notice">
-            同じブラウザで音声の再生と文字起こしを行うと、エコー除去により再生音が小さくなる場合があります。その場合は、<strong
-              >再生側とOpen
+            ※
+            同じブラウザで音声の再生と文字起こしを行うと、ブラウザのエコー除去によって
+            再生音が小さくなり、うまく拾われないことがあります。その場合は、<strong
+              >音声を再生する側とOpen
               Micを使う側を、別のブラウザまたはアプリに分けて</strong
             >ください。
           </p>
         </div>
       </section>
-      <section class="section privacy" id="privacy">
-        <div class="wrap">
-          <div class="section-head">
-            <h2>音声のミックスは、Macの中だけ。</h2>
-            <p class="desc">Open Micは、音声を録音・保存・外部送信しません。</p>
+      <section id="uses">
+        <div class="wrap sec-head">
+          <div class="section-title">
+            <p class="eyebrow">使いどころ</p>
+            <h2>誰もが、AIのマイクの前に立てる。</h2>
           </div>
-          <dl class="specs">
-            <div>
-              <dt>音声の処理</dt>
-              <dd>Mac上で完結</dd>
+        </div>
+        <div class="wrap">
+          <div class="cards four">
+            <div class="card lead">
+              <h3>AIの成果物を、チームでレビュー</h3>
+              <p>
+                チームのフィードバックを、AIエージェントに直接聞かせられます。AI駆動開発でレビューのたびに議論をプロンプトへ書き直す、あの手間がなくなります。
+              </p>
             </div>
-            <div>
-              <dt>録音・保存</dt>
-              <dd>しません</dd>
+            <div class="card">
+              <h3>会議を、まるごとAI議事録へ</h3>
+              <p>自分の声だけでなく、相手の発言もAI議事録に残ります。</p>
             </div>
-            <div>
-              <dt>音声の外部送信</dt>
-              <dd>なし</dd>
+            <div class="card">
+              <h3>AIとのモブプログラミングに</h3>
+              <p>
+                画面で鳴っている音も、それについて話す全員の声も、AIエージェントへまとめて届きます。ペアプロでも同じです。
+              </p>
             </div>
-            <div>
+            <div class="card">
+              <h3>会話の文字起こしに</h3>
+              <p>会話の両側を、ひとつの入力として渡せます。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="privacy">
+        <div class="wrap sec-head split-head">
+          <div class="section-title">
+            <p class="eyebrow">プライバシー</p>
+            <h2>音声のミックスは、Macの中だけ。</h2>
+          </div>
+          <div class="section-copy">
+            <p class="sub">
+              Open
+              Micは、音声を録音・保存・外部送信しません。音声のミックス処理は、すべてMac上で行われます。
+            </p>
+          </div>
+        </div>
+        <div class="wrap">
+          <dl class="spec">
+            <div class="row">
               <dt>画面の映像</dt>
-              <dd>取得しません</dd>
+              <dd class="good">取得しない</dd>
             </div>
-            <div>
+            <div class="row">
+              <dt>システム音声</dt>
+              <dd>Mac内で処理</dd>
+            </div>
+            <div class="row">
+              <dt>音声の保存</dt>
+              <dd class="good">しない</dd>
+            </div>
+            <div class="row">
+              <dt>音声の外部送信</dt>
+              <dd class="good">なし</dd>
+            </div>
+            <div class="row">
               <dt>アカウント</dt>
-              <dd>不要</dd>
+              <dd class="good">不要</dd>
             </div>
-            <div>
-              <dt>アプリ内の解析・計測</dt>
-              <dd>なし</dd>
+            <div class="row">
+              <dt>解析・計測</dt>
+              <dd class="good">なし</dd>
             </div>
           </dl>
-          <p class="notice">
-            macOSの「画面収録」の許可はシステム音声の取得に必要なものです。画面の映像は取得・録画しません。入力先のAIアプリでの音声の取り扱いは、そのサービスのプライバシーポリシーに従います。
+          <p
+            class="sub"
+            style="max-width: 68ch; margin: 22px 0 0; font-size: 15px"
+          >
+            macOSが「画面収録」の許可を求めるのは、システム音声の取得が
+            この権限に含まれているためです。Open
+            Micが取得するのは音声だけで、画面の映像を取得・録画することはありません。なお、選択したAIアプリでの音声の取り扱いは、各サービスのプライバシーポリシーをご確認ください。
           </p>
         </div>
       </section>
-      <section class="section faq-section" id="faq">
-        <div class="wrap faq-layout">
-          <div class="section-head">
-            <h2>詳しく知りたい方へ。</h2>
-          </div>
-          <div class="faq-list">
-            <details>
-              <summary>Open Micが文字起こしやAIの回答をするのですか？</summary>
-              <p>
-                いいえ。Open
-                Micは、マイクとMacの音をまとめて、通常のマイク入力として渡すアプリです。文字起こし・要約・回答は、入力先に選んだAIアプリの機能です。「Open
-                Mic」をマイク入力として選択できるアプリで利用します。
-              </p>
-            </details>
-            <details>
-              <summary>Open Micと手動ルーティングの違い</summary>
-              <div class="scroller">
-                <table>
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>Open Mic</th>
-                      <th>手動ルーティング</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>マイクとMac音声のミックス</td>
-                      <td class="yes">自動</td>
-                      <td class="no">手動設定が必要</td>
-                    </tr>
-                    <tr>
-                      <td>出力デバイスの変更</td>
-                      <td class="yes">不要</td>
-                      <td class="no">必要な場合がある</td>
-                    </tr>
-                    <tr>
-                      <td>会議ごとの再設定</td>
-                      <td class="yes">不要</td>
-                      <td class="no">必要な場合がある</td>
-                    </tr>
-                    <tr>
-                      <td>操作</td>
-                      <td class="yes">ONにするだけ</td>
-                      <td class="no">複数の音声設定</td>
-                    </tr>
-                    <tr>
-                      <td>アンインストール</td>
-                      <td class="yes">コマンド1つ</td>
-                      <td class="no">設定を手で戻す</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p class="sub">
-                ループバックドライバは、音声を自由にルーティングしたい場合に適しています。
-              </p>
-              <p>
-                Open Micは、自由なルーティングのためのツールではありません。
-                <strong>マイクとMacの音を、ひとつの入力にする。</strong>
-                そのひとつだけを、設定なしで行います。
-              </p>
-            </details>
-            <details>
-              <summary>必要な権限</summary>
-              <p>
-                <strong>マイク</strong>（あなたの声を取得するため）と、
-                <strong>画面収録</strong
-                >（Macが再生している音を取得するため）です。
-              </p>
-              <p>
-                Open Micは画面を録画しません。macOSがシステム音声の取り込みを
-                「画面収録」に含めているためで、これより狭い権限が用意されていないだけです。
-              </p>
-            </details>
-            <details>
-              <summary>同じブラウザの再生音が拾われにくい場合</summary>
-              <p>
-                ブラウザや通話アプリには、スピーカーから鳴った音がマイクへ戻るのを防ぐ
-                <strong>エコー除去</strong>があります。
-              </p>
-              <p>
-                この機能により、同じブラウザで動画などを再生しながら文字起こしを行うと、その再生音は大きく弱められます。そのまま問題なく使えることもあれば、うまく拾われなくなることもあり、アプリによって変わります。
-              </p>
-              <p>
-                うまく拾われないときは、音声を再生する側とOpen
-                Micを使う側を、別のブラウザまたはアプリに
-                分けてください。たとえばSafariで再生してChromeで文字起こしする、またはブラウザで再生してデスクトップアプリで文字起こしする、といった形です。
-              </p>
-              <p class="sub">
-                これは受け取り側のアプリによる音声処理のため、Open Micの設定から
-                無効にすることはできません。
-              </p>
-            </details>
-            <details>
-              <summary>どちらの音が届いているか</summary>
-              <p>メニューバーの表示は、音声レベルメーターです。</p>
-              <ul>
-                <li>左のバー: マイク</li>
-                <li>右のバー: Macの音</li>
-              </ul>
-              <p>
-                音が届かないときも、どちらが止まっているのかをすぐ確認できます。
-              </p>
-            </details>
-            <details>
-              <summary>インストールと完全な削除</summary>
-              <p>
-                インストーラをダウンロードして開くだけです。インストール中、Macの音が1〜2秒途切れます。通話中は避けてください。
-              </p>
-              <p>すべて削除する場合:</p>
-              <pre><code>sudo "/Library/Application Support/OpenMic/uninstall.sh"</code></pre>
-              <p class="sub">
-                Open
-                Micと関連ファイルを削除し、残存ファイルがないことを確認します。マイクと画面収録の権限設定はシステム設定に残るため、必要に応じて手動で削除してください。
-              </p>
-            </details>
-            <details>
-              <summary>Open Micの開発を支援するには</summary>
-              <p>
-                Open Micは無料で、これからも無料です。役に立ったと感じたら、
-                <a href="https://ko-fi.com/tkkrtky">Ko-fi</a>から支援できます。
-              </p>
-            </details>
-            <details>
-              <summary>不具合を報告する</summary>
-              <p>
-                不具合は<a href="https://github.com/TKKRTKY/OpenMic/issues"
-                  >GitHub Issues</a
-                >へお寄せください。アプリの<strong>Send Feedback</strong
-                >から、必要な情報が入力されたIssueを開けます。内容を確認・編集してから投稿できます。
-              </p>
-            </details>
-          </div>
+      <section id="faq">
+        <div class="wrap sec-head">
+          <div class="section-title"><h2>詳しく知りたい方へ。</h2></div>
+        </div>
+        <div class="wrap">
+          <details>
+            <summary>Open Micが文字起こしやAIの回答をするのですか？</summary>
+            <p>
+              いいえ。Open
+              Micは、あなたのマイクとMacの音を、ひとつのマイク入力として渡す道具です。文字起こし・要約・回答は、入力先に選んだAIアプリが行います。
+            </p>
+          </details>
+          <details>
+            <summary>Open Micと手動ルーティングの違い</summary>
+            <div class="scroller">
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Open Mic</th>
+                    <th>手動ルーティング</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>マイクとMac音声のミックス</td>
+                    <td class="yes">自動</td>
+                    <td class="no">手動設定が必要</td>
+                  </tr>
+                  <tr>
+                    <td>出力デバイスの変更</td>
+                    <td class="yes">不要</td>
+                    <td class="no">必要な場合がある</td>
+                  </tr>
+                  <tr>
+                    <td>会議ごとの再設定</td>
+                    <td class="yes">不要</td>
+                    <td class="no">必要な場合がある</td>
+                  </tr>
+                  <tr>
+                    <td>操作</td>
+                    <td class="yes">ONにするだけ</td>
+                    <td class="no">複数の音声設定</td>
+                  </tr>
+                  <tr>
+                    <td>アンインストール</td>
+                    <td class="yes">コマンド1つ</td>
+                    <td class="no">設定を手で戻す</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="sub">
+              ループバックドライバは、音声を自由にルーティングしたい場合に適しています。
+            </p>
+            <p>
+              Open Micは、自由なルーティングのためのツールではありません。
+              <strong>マイクとMacの音を、ひとつの入力にする。</strong>
+              そのひとつだけを、設定なしで行います。
+            </p>
+          </details>
+          <details>
+            <summary>必要な権限</summary>
+            <p>
+              <strong>マイク</strong>（あなたの声を取得するため）と、
+              <strong>画面収録</strong
+              >（Macが再生している音を取得するため）です。
+            </p>
+            <p>
+              Open Micは画面を録画しません。macOSがシステム音声の取り込みを
+              「画面収録」に含めているためで、これより狭い権限が用意されていないだけです。
+            </p>
+          </details>
+          <details>
+            <summary>同じブラウザの再生音が拾われにくい場合</summary>
+            <p>
+              ブラウザや通話アプリには、スピーカーから鳴った音がマイクへ戻るのを防ぐ
+              <strong>エコー除去</strong>があります。
+            </p>
+            <p>
+              この機能により、同じブラウザで動画などを再生しながら文字起こしを行うと、その再生音は大きく弱められます。そのまま問題なく使えることもあれば、うまく拾われなくなることもあり、アプリによって変わります。
+            </p>
+            <p>
+              うまく拾われないときは、音声を再生する側とOpen
+              Micを使う側を、別のブラウザまたはアプリに
+              分けてください。たとえばSafariで再生してChromeで文字起こしする、またはブラウザで再生してデスクトップアプリで文字起こしする、といった形です。
+            </p>
+            <p class="sub">
+              これは受け取り側のアプリによる音声処理のため、Open Micの設定から
+              無効にすることはできません。
+            </p>
+          </details>
+          <details>
+            <summary>どちらの音が届いているか</summary>
+            <p>メニューバーの表示は、音声レベルメーターです。</p>
+            <ul>
+              <li>左のバー: マイク</li>
+              <li>右のバー: Macの音</li>
+            </ul>
+            <p>
+              音が届かないときも、どちらが止まっているのかをすぐ確認できます。
+            </p>
+          </details>
+          <details>
+            <summary>インストールと完全な削除</summary>
+            <p>
+              インストーラをダウンロードして開くだけです。インストール中、Macの音が1〜2秒途切れます。通話中は避けてください。
+            </p>
+            <p>すべて削除する場合:</p>
+            <pre><code>sudo "/Library/Application Support/OpenMic/uninstall.sh"</code></pre>
+            <p class="sub">
+              Open
+              Micと関連ファイルを削除し、残存ファイルがないことを確認します。マイクと画面収録の権限設定はシステム設定に残るため、必要に応じて手動で削除してください。
+            </p>
+          </details>
+          <details>
+            <summary>Open Micの開発を支援するには</summary>
+            <p>
+              Open Micは無料で、これからも無料です。役に立ったと感じたら、
+              <a href="https://ko-fi.com/tkkrtky">Ko-fi</a>から支援できます。
+            </p>
+          </details>
+          <details>
+            <summary>不具合を報告する</summary>
+            <p>
+              不具合は<a href="https://github.com/TKKRTKY/OpenMic/issues"
+                >GitHub Issues</a
+              >へお寄せください。アプリの<strong>Send Feedback</strong
+              >から、必要な情報が入力されたIssueを開けます。内容を確認・編集してから投稿できます。
+            </p>
+          </details>
         </div>
       </section>
-      <section class="end">
+      <section class="closing" id="download">
         <div class="wrap">
           <h2>AIに、会話のぜんぶを聞かせる。</h2>
-          <a
-            class="cta"
-            href="https://github.com/TKKRTKY/OpenMic/releases/latest/download/OpenMic.pkg"
-            ><svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              aria-hidden="true"
+          <div class="actions">
+            <a
+              class="button"
+              href="https://github.com/TKKRTKY/OpenMic/releases/latest/download/OpenMic.pkg"
+              >Open Micをダウンロード</a
             >
-              <path d="M12 3v12m-4-4 4 4 4-4M5 17v4h14v-4" /></svg
-            ><span>macOS版をダウンロード</span></a
-          >
-          <p class="meta">
-            無料 <span>/</span> macOS 14.2以降 <span>/</span> アカウント不要
-          </p>
+          </div>
+          <p class="meta">無料 · macOS 14.2以降 · アカウント不要</p>
         </div>
       </section>
     </main>
-    <footer class="wrap">
-      <div class="foot">
-        <a class="brand" href="./"
-          ><img
-            class="app-icon"
-            src="../assets/icon.png"
-            width="32"
-            height="32"
-            alt=""
-          /><span>Open Mic</span></a
-        >
-        <nav class="footlinks" aria-label="関連リンク">
-          <a href="https://github.com/TKKRTKY/OpenMic">GitHub</a
-          ><a href="https://github.com/TKKRTKY/OpenMic/issues">不具合を報告</a
-          ><a href="https://ko-fi.com/tkkrtky">支援</a
-          ><a href="../" lang="en">English</a>
-        </nav>
-      </div>
-    </footer>
+    <div class="wrap">
+      <footer>
+        <span>Open Mic</span>
+        <span>
+          <a href="https://github.com/TKKRTKY/OpenMic">GitHub</a> ·
+          <a href="https://github.com/TKKRTKY/OpenMic/issues">フィードバック</a>
+          · <a href="https://ko-fi.com/tkkrtky">支援</a> ·
+          <a href="../">English</a>
+        </span>
+        <span class="motto">No AI inside. Built for AI.</span>
+      </footer>
+    </div>
   </body>
 </html>

@@ -1,83 +1,84 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <!-- Search Console, URL-prefix property for /OpenMic/. Public by design:
      it is served to every visitor, which is how Google reads it. -->
     <meta
-      name="google-site-verification"
       content="kvjWxSkpJJNc_70IJaY1Kb1v3JU9AELTllym_bGX0Yo"
+      name="google-site-verification"
     />
     <title>Open Mic — Let your AI hear the whole conversation.</title>
     <meta
-      name="description"
       content="Your voice and the voices coming from your Mac, in one virtual microphone. For team reviews with AI, meeting notes, and mob programming. No manual audio routing. Free, macOS 14.2 or later, no account."
+      name="description"
     />
-    <link rel="icon" href="assets/icon-180.png" />
-    <link rel="apple-touch-icon" href="assets/icon-180.png" />
-    <link rel="stylesheet" href="assets/site.css?v=28" />
-    <link rel="canonical" href="https://tkkrtky.github.io/OpenMic/" />
+    <link href="assets/icon-180.png" rel="icon" />
+    <link href="assets/icon-180.png" rel="apple-touch-icon" />
+    <link href="assets/site.css?v=29" rel="stylesheet" />
+    <link href="https://tkkrtky.github.io/OpenMic/" rel="canonical" />
     <!-- Absolute, and with an x-default: a relative hreflang is resolved
      inconsistently, and without a default there is nothing to offer a reader
      whose language is neither of the two. -->
     <link
-      rel="alternate"
+      href="https://tkkrtky.github.io/OpenMic/"
       hreflang="en"
-      href="https://tkkrtky.github.io/OpenMic/"
+      rel="alternate"
     />
     <link
-      rel="alternate"
-      hreflang="ja"
       href="https://tkkrtky.github.io/OpenMic/ja/"
+      hreflang="ja"
+      rel="alternate"
     />
     <link
-      rel="alternate"
-      hreflang="x-default"
       href="https://tkkrtky.github.io/OpenMic/"
+      hreflang="x-default"
+      rel="alternate"
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Open Mic" />
-    <meta property="og:url" content="https://tkkrtky.github.io/OpenMic/" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="ja_JP" />
+    <meta content="website" property="og:type" />
+    <meta content="Open Mic" property="og:site_name" />
+    <meta content="https://tkkrtky.github.io/OpenMic/" property="og:url" />
+    <meta content="en_US" property="og:locale" />
+    <meta content="ja_JP" property="og:locale:alternate" />
     <!-- Just the name: the headline is on the card itself, and a platform prints
      the title directly under the image. -->
-    <meta property="og:title" content="Open Mic" />
+    <meta content="Open Mic" property="og:title" />
     <meta
-      property="og:description"
       content="Mix your microphone and your Mac's audio into one virtual microphone. Free, macOS 14.2 or later, no account."
+      property="og:description"
     />
     <!-- Absolute, because a scraper has no page to resolve a relative path against.
      Sized for the 1.91:1 card: the square app icon was being letterboxed. -->
     <meta
+      content="https://tkkrtky.github.io/OpenMic/assets/og.png"
       property="og:image"
-      content="https://tkkrtky.github.io/OpenMic/assets/og.png"
     />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
     <meta
-      property="og:image:alt"
       content="Let your AI hear the whole conversation. — Your voice and the voices coming from your Mac, in one audio input with Open Mic."
+      property="og:image:alt"
     />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Open Mic" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="Open Mic" name="twitter:title" />
     <meta
-      name="twitter:description"
       content="Mix your microphone and your Mac's audio into one virtual microphone."
+      name="twitter:description"
     />
     <meta
-      name="twitter:image"
       content="https://tkkrtky.github.io/OpenMic/assets/og.png"
+      name="twitter:image"
     />
     <!-- Visit counts only: no cookies, no personal data, so no consent banner.
      The token is public by design — it ships in the page for every visitor to
      see, which is why it lives here rather than anywhere secret. -->
     <script
-      type="module"
-      defer
-      src="https://static.cloudflareinsights.com/beacon.min.js"
       data-cf-beacon='{"token": "2212ae100c27410ea55037fcbdcbeb27"}'
+      defer=""
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      type="module"
     ></script>
     <script type="application/ld+json">
       {
@@ -101,559 +102,477 @@
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
-    <header id="top" class="wrap">
-      <div class="nav">
-        <a class="brand" href="./"
-          ><img
-            class="app-icon"
-            src="assets/icon.png"
-            width="32"
-            height="32"
-            alt=""
-          /><span>Open Mic</span></a
-        >
-        <nav class="navlinks" aria-label="Main navigation">
-          <a href="#how">How it works</a><a href="#setup">Setup</a
-          ><a href="#privacy">Privacy</a>
-          <div class="languages" aria-label="Language">
-            <a href="./" lang="en" hreflang="en" aria-current="page">EN</a
-            ><a href="ja/" lang="ja" hreflang="ja">日本語</a>
-          </div>
-        </nav>
+    <header class="wrap">
+      <div class="top">
+        <span class="brand"><img alt="" src="assets/icon.png" />Open Mic</span>
+
+        <div class="top-actions">
+          <nav aria-label="Language" class="lang">
+            <a aria-current="page" href="./" hreflang="en" lang="en">English</a>
+            <a href="ja/" hreflang="ja" lang="ja">日本語</a>
+          </nav>
+          <a
+            class="button header-download"
+            href="https://github.com/TKKRTKY/OpenMic/releases/latest/download/OpenMic.pkg"
+            >Download</a
+          >
+        </div>
       </div>
     </header>
-    <main id="main">
-      <section class="hero" aria-labelledby="headline">
-        <div class="wrap">
-          <h1 id="headline">Let your AI hear<br />the whole conversation.</h1>
-          <p class="lede">
-            Your voice and the voices coming from your Mac, together in one
-            virtual microphone. No audio routing to configure.
-          </p>
-          <div class="hero-actions">
-            <a
-              class="cta"
-              href="https://github.com/TKKRTKY/OpenMic/releases/latest/download/OpenMic.pkg"
-              ><svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                aria-hidden="true"
-              >
-                <path d="M12 3v12m-4-4 4 4 4-4M5 17v4h14v-4" /></svg
-              ><span>Download for macOS</span></a
-            >
-          </div>
-          <p class="meta">
-            Free <span>/</span> macOS 14.2+ <span>/</span> No account
-          </p>
-          <figure class="product-preview">
-            <div
-              role="img"
-              aria-label="Open Mic UI illustration, not an actual screenshot."
-            >
-              <div class="native-stage">
-                <div class="desktop-bar" aria-hidden="true">
-                  <span>Finder　 File　 Edit　 View</span
-                  ><span class="status"
-                    ><img
-                      class="menu-bar-icon"
-                      src="assets/menubar-item.png"
-                      width="40"
-                      height="16"
-                      alt=""
-                    /><span>Wi-Fi</span><span>14:32</span></span
-                  >
-                </div>
 
-                <div class="menu" aria-hidden="true">
-                  <div class="menu-head">Open Mic</div>
-                  <div class="menu-sep"></div>
-                  <div class="menu-item">
-                    <span class="power-dot"></span>Turn Off
+    <main id="main">
+      <div class="wrap">
+        <div aria-labelledby="headline" class="hero">
+          <div class="hero-copy">
+            <h1 id="headline">Let your AI hear<br />the whole conversation.</h1>
+            <p class="lede">
+              Your voice and the voices coming from your Mac, together in one
+              virtual microphone. No audio routing to configure.
+            </p>
+            <div class="actions">
+              <a
+                class="button"
+                href="https://github.com/TKKRTKY/OpenMic/releases/latest/download/OpenMic.pkg"
+                >Download for macOS</a
+              >
+              <a class="button ghost" href="#how">How it works</a>
+            </div>
+            <p class="meta">
+              <span>Free</span><span class="dot">·</span
+              ><span>macOS 14.2 or later</span><span class="dot">·</span
+              ><span>No account required</span>
+            </p>
+          </div>
+          <div
+            aria-label="UI illustration: Open Mic running in the menu bar, showing separate levels for the microphone and the Mac's audio"
+            class="mock"
+            role="img"
+          >
+            <div class="mock-menubar">
+              <img alt="" src="assets/menubar-item.png" />
+              <span class="chip"></span><span class="chip"></span
+              ><span>14:32</span>
+            </div>
+            <div class="mock-body">
+              <div class="menu">
+                <div class="head">
+                  <span>Open Mic</span><span class="ver">0.4.0 (5)</span>
+                </div>
+                <div class="sep"></div>
+                <div class="toggle"><span class="dot"></span>Turn Off</div>
+                <div class="status">Microphone + system audio</div>
+                <div class="levels">
+                  <div class="level">
+                    <span class="name">Microphone</span
+                    ><span class="track"
+                      ><span class="fill" style="width: 78%"></span
+                    ></span>
                   </div>
-                  <div class="menu-hint">Microphone + system audio</div>
-                  <div class="menu-level">
-                    <span>Microphone</span><span class="meter"><i></i></span>
+                  <div class="level">
+                    <span class="name">System audio</span
+                    ><span class="track"
+                      ><span class="fill sage" style="width: 52%"></span
+                    ></span>
                   </div>
-                  <div class="menu-level">
-                    <span>System audio</span
-                    ><span class="meter system"><i></i></span>
-                  </div>
-                  <div class="menu-sep"></div>
-                  <div class="menu-hint">Microphone source</div>
-                  <div class="menu-item">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.8"
-                      aria-hidden="true"
-                    >
-                      <path d="m5 12 4 4L19 6" /></svg
-                    >MacBook Pro Microphone
-                  </div>
-                  <div class="menu-item">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.8"
-                      aria-hidden="true"
-                    >
-                      <path d="m5 12 4 4L19 6" /></svg
-                    >Open at Login
-                  </div>
-                  <div class="menu-sep"></div>
-                  <div class="menu-hint">
-                    Select “Open Mic” as the microphone<br />in your AI app
-                  </div>
-                  <div class="menu-foot">
-                    <span>Updates</span><span>Feedback</span><span>Quit</span>
-                  </div>
+                </div>
+                <div class="sep"></div>
+                <div class="field">Microphone source</div>
+                <div class="opt"><span class="tick"></span>System default</div>
+                <div class="opt sel">
+                  <span class="tick"></span>MacBook Pro Microphone
+                </div>
+                <div class="check">
+                  <span class="box">☑</span>Open at Login
+                </div>
+                <div class="sep"></div>
+                <div class="hint">
+                  Select “Open Mic” as the microphone in your AI app
+                </div>
+                <div class="links">
+                  <span>Updates</span><span>Feedback</span
+                  ><span class="end">Quit</span>
                 </div>
               </div>
             </div>
-            <figcaption class="preview-note">
-              Open Mic UI illustration, not an actual screenshot.
-            </figcaption>
-          </figure>
+          </div>
         </div>
-      </section>
-      <section class="section how" id="how">
-        <div class="wrap">
-          <div class="section-head">
+      </div>
+      <section id="how">
+        <div class="wrap sec-head split-head">
+          <div class="section-title">
+            <p class="eyebrow">How it works</p>
             <h2>Two sounds, one microphone.</h2>
-            <p class="desc">
+          </div>
+          <div class="section-copy">
+            <p class="sub">
               Most AI apps take a single microphone input. Your voice reaches
               it; the voices your Mac is playing do not.
             </p>
-            <p class="desc">
-              Open Mic mixes your microphone with your Mac&#x27;s audio and
-              hands the result to the app as an ordinary microphone input.
+            <p class="sub">
+              Open Mic mixes your microphone with your Mac's audio and hands the
+              result to the app as an ordinary microphone input.
             </p>
           </div>
-          <figure class="flow-figure">
-            <ol class="audio-flow">
-              <li class="source-pair">
-                <div class="source">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.7"
-                    aria-hidden="true"
-                  >
-                    <rect x="9" y="3" width="6" height="11" rx="3" />
-                    <path
-                      d="M5.5 10.5v1a6.5 6.5 0 0 0 13 0v-1M12 18v3m-4 0h8"
-                    /></svg
-                  ><span>Your voice</span>
-                </div>
-                <span class="plus" aria-hidden="true">+</span>
-                <div class="source">
-                  <span class="audio-icon" aria-hidden="true"></span
-                  ><span>Mac audio</span>
-                </div>
-              </li>
-              <li class="flow-arrow" aria-hidden="true">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  aria-hidden="true"
-                >
-                  <path d="M4 12h15m-6-6 6 6-6 6" />
-                </svg>
-              </li>
-              <li class="flow-output">
-                <img
-                  class="app-icon"
-                  src="assets/icon.png"
-                  width="32"
-                  height="32"
-                  alt=""
-                /><strong>Open Mic</strong><small>One virtual microphone</small>
-              </li>
-              <li class="flow-arrow" aria-hidden="true">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  aria-hidden="true"
-                >
-                  <path d="M4 12h15m-6-6 6 6-6 6" />
-                </svg>
-              </li>
-              <li class="flow-output">
-                <strong>Your AI app</strong
-                ><small>Select as the audio input</small>
-              </li>
-            </ol>
-            <figcaption class="preview-note">
-              Audio flow illustration. Transcription, summaries, and replies
-              happen in the app you send audio to.
-            </figcaption>
-          </figure>
         </div>
-      </section>
-      <section class="section use" id="use">
-        <div class="wrap">
-          <div class="section-head">
-            <h2>Everyone gets a turn at the AI’s mic.</h2>
-          </div>
-          <div class="use-grid">
-            <article>
-              <h3>Review AI-generated work together</h3>
-              <p class="desc">
-                Send your team’s feedback directly to an AI agent that accepts
-                audio input. Spend less time rewriting every review discussion
-                as a prompt.
-              </p>
-            </article>
-            <article>
-              <h3>Whole meetings into AI notes</h3>
-              <p class="desc">
-                Not just your voice, but your remote teammates’ voices, too.
-                Send both sides of the conversation to your meeting-notes app.
-              </p>
-            </article>
-            <article>
-              <h3>Mob programming with an AI agent</h3>
-              <p class="desc">
-                Your discussion about the code, plus the audio playing on your
-                Mac. Share the conversation with an audio-enabled AI agent,
-                whether pairing or mob programming.
-              </p>
-            </article>
-            <article>
-              <h3>Transcribing a conversation</h3>
-              <p class="desc">
-                Send your microphone and the voices coming from your Mac to your
-                transcription tool as one input. No setup combining multiple
-                audio devices.
-              </p>
-            </article>
+        <div class="wrap" style="margin-top: 44px">
+          <div class="flow">
+            <div class="side left">
+              <div class="pair">
+                <div class="node">Your microphone</div>
+                <div class="node">Your Mac's audio</div>
+              </div>
+              <span class="arrow">→</span>
+            </div>
+            <div class="node primary">
+              <img alt="" src="assets/icon.png" />Open Mic
+            </div>
+            <div class="side right">
+              <span class="arrow">→</span>
+              <div class="node">Your AI app</div>
+            </div>
           </div>
         </div>
       </section>
-      <section class="section setup" id="setup">
-        <div class="wrap">
-          <div class="section-head">
+      <section id="setup">
+        <div class="wrap sec-head split-head">
+          <div class="section-title">
+            <p class="eyebrow">Setup</p>
             <h2>Two steps, then never again.</h2>
-            <p class="desc">
-              Your audio output, volume keys, and headphones keep working as
-              usual.
+          </div>
+          <div class="section-copy">
+            <p class="sub">
+              On first use, allow Microphone and Screen Recording permissions.
+              Screen Recording permission is needed to capture your Mac’s audio;
+              Open Mic does not capture or record your screen.
             </p>
           </div>
-          <ol class="setup-steps">
-            <li class="step">
-              <span class="step-num" aria-hidden="true">01</span>
+        </div>
+        <div class="wrap">
+          <div class="steps">
+            <div class="step">
+              <div class="num">01</div>
               <h3>Switch Open Mic on</h3>
-              <p class="desc">
-                After installing, allow Microphone and Screen Recording access.
-                Turn Open Mic on from the menu bar. Screen Recording access is
-                needed for system audio; Open Mic does not record your screen.
-              </p>
               <div
-                class="small-choice"
+                aria-label="The Open Mic panel, switched off"
+                class="shot"
                 role="img"
-                aria-label="Switch Open Mic on"
               >
-                <div>Menu bar</div>
-                <strong
-                  ><span>Open Mic — Turn Off</span
-                  ><svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    aria-hidden="true"
-                  >
-                    <path d="m5 12 4 4L19 6" /></svg
-                ></strong>
+                <div class="cap">Menu bar</div>
+                <div class="item off">
+                  <span class="dot"></span><span>Turn On</span>
+                </div>
+                <div class="minilevel">
+                  <span class="name">Microphone</span
+                  ><span class="track"></span>
+                </div>
+                <div class="minilevel">
+                  <span class="name">System audio</span
+                  ><span class="track"></span>
+                </div>
               </div>
-            </li>
-            <li class="step">
-              <span class="step-num" aria-hidden="true">02</span>
-              <h3>Pick it as your AI app’s input</h3>
-              <p class="desc">
-                Choose “Open Mic” as the microphone in your AI app. Your voice
-                and the other side’s voice arrive together.
+              <p class="sub">
+                Your output device, volume keys and headphones all keep working
+                exactly as they did.
               </p>
+            </div>
+            <div class="step">
+              <div class="num">02</div>
+              <h3>Pick “Open Mic” as the input in your AI app</h3>
               <div
-                class="small-choice"
+                aria-label="An app's microphone list, with Open Mic selected"
+                class="shot"
                 role="img"
-                aria-label="Pick it as your AI app’s input"
               >
-                <div>Your AI app · Microphone</div>
-                <strong
-                  ><span>Open Mic</span
-                  ><svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                    aria-hidden="true"
-                  >
-                    <path d="m5 12 4 4L19 6" /></svg
-                ></strong>
+                <div class="cap">Your AI app · Microphone</div>
+                <div class="item mut"><span>MacBook Pro Microphone</span></div>
+                <div class="item sel">
+                  <span>Open Mic</span><span class="tick">✓</span>
+                </div>
+                <div class="item mut"><span>External Headphones</span></div>
               </div>
-            </li>
-          </ol>
+              <p class="sub">
+                Choose “Open Mic” as the audio input in your AI app, and both
+                your voice and your Mac's audio reach it together.
+              </p>
+            </div>
+          </div>
           <p class="notice">
-            Playing and transcribing in the same browser can cause echo
-            cancellation to quiet the playback audio. If that happens,
+            Playing audio and transcribing it in the same browser can leave the
+            playback much quieter, and sometimes too quiet to pick up. If that
+            happens,
             <strong
-              >keep the app playing audio and the app using Open Mic in separate
-              browsers or apps</strong
+              >keep the side playing the audio and the side using Open Mic in
+              different browsers or apps</strong
             >.
           </p>
         </div>
       </section>
-      <section class="section privacy" id="privacy">
+      <section id="uses">
+        <div class="wrap sec-head">
+          <div class="section-title">
+            <p class="eyebrow">Where it helps</p>
+            <h2>Everyone gets a turn at the AI's mic.</h2>
+          </div>
+        </div>
         <div class="wrap">
-          <div class="section-head">
-            <h2>Your audio is mixed on your Mac.</h2>
-            <p class="desc">
-              Open Mic does not record, store, or upload your audio.
+          <div class="cards four">
+            <div class="card lead">
+              <h3>Review AI-generated work together</h3>
+              <p>
+                Let your AI agent hear the team's feedback directly. No more
+                rewriting each review into a prompt, which is most of the
+                friction in AI-driven development.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Whole meetings into AI notes</h3>
+              <p>
+                Not only your own voice — everyone else in the call reaches your
+                AI notes too.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Mob programming with an AI agent</h3>
+              <p>
+                What your screen is playing and what everyone in the room is
+                saying both reach the agent. The same goes for pairing.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Transcribing a conversation</h3>
+              <p>Hand over both halves of a conversation as a single input.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="privacy">
+        <div class="wrap sec-head split-head">
+          <div class="section-title">
+            <p class="eyebrow">Privacy</p>
+            <h2>Audio mixing stays on your Mac.</h2>
+          </div>
+          <div class="section-copy">
+            <p class="sub">
+              Open Mic does not record, store, or upload your audio. Audio
+              mixing happens entirely on your Mac.
             </p>
           </div>
-          <dl class="specs">
-            <div>
-              <dt>Audio processing</dt>
-              <dd>On your Mac</dd>
+        </div>
+        <div class="wrap">
+          <dl class="spec">
+            <div class="row">
+              <dt>Screen pixels</dt>
+              <dd class="good">Not accessed</dd>
             </div>
-            <div>
-              <dt>Recording & storage</dt>
-              <dd>None</dd>
+            <div class="row">
+              <dt>System audio</dt>
+              <dd>Processed locally</dd>
             </div>
-            <div>
-              <dt>Audio uploads</dt>
-              <dd>None</dd>
+            <div class="row">
+              <dt>Audio recording</dt>
+              <dd class="good">Not saved</dd>
             </div>
-            <div>
-              <dt>Screen video</dt>
-              <dd>Never captured</dd>
+            <div class="row">
+              <dt>Audio uploaded</dt>
+              <dd class="good">Never</dd>
             </div>
-            <div>
+            <div class="row">
               <dt>Account</dt>
-              <dd>Not required</dd>
+              <dd class="good">Not required</dd>
             </div>
-            <div>
-              <dt>In-app analytics</dt>
-              <dd>None</dd>
+            <div class="row">
+              <dt>Analytics</dt>
+              <dd class="good">None</dd>
             </div>
           </dl>
-          <p class="notice">
-            macOS requires Screen Recording permission to capture system audio.
-            Open Mic does not capture or record screen video. How your chosen AI
-            app handles the audio it receives is covered by that service’s
-            privacy policy.
+          <p
+            class="sub"
+            style="max-width: 68ch; margin: 22px 0 0; font-size: 15px"
+          >
+            macOS asks for Screen Recording permission because capturing system
+            audio falls under it. Open Mic takes only the audio — it never
+            captures or records what is on your screen. How the AI app you
+            choose handles the audio is covered by that service's own privacy
+            policy.
           </p>
         </div>
       </section>
-      <section class="section faq-section" id="faq">
-        <div class="wrap faq-layout">
-          <div class="section-head">
-            <h2>If you want the details.</h2>
-          </div>
-          <div class="faq-list">
-            <details>
-              <summary>
-                Does Open Mic transcribe or generate AI replies?
-              </summary>
-              <p>
-                No. Open Mic combines your microphone and Mac audio into a
-                regular microphone input. Transcription, summaries, and replies
-                are features of the app you send audio to. Use it in an app that
-                lets you select “Open Mic” as the microphone input.
-              </p>
-            </details>
-            <details>
-              <summary>Open Mic and manual audio routing</summary>
-              <div class="scroller">
-                <table>
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>Open Mic</th>
-                      <th>Manual routing</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Mixing mic and Mac audio</td>
-                      <td class="yes">Automatic</td>
-                      <td class="no">Configured by hand</td>
-                    </tr>
-                    <tr>
-                      <td>Changing your output device</td>
-                      <td class="yes">Not needed</td>
-                      <td class="no">Sometimes required</td>
-                    </tr>
-                    <tr>
-                      <td>Setting up again per meeting</td>
-                      <td class="yes">Not needed</td>
-                      <td class="no">Sometimes required</td>
-                    </tr>
-                    <tr>
-                      <td>Turning it on</td>
-                      <td class="yes">One switch</td>
-                      <td class="no">Several audio settings</td>
-                    </tr>
-                    <tr>
-                      <td>Removing it</td>
-                      <td class="yes">One command</td>
-                      <td class="no">Undo the settings by hand</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p class="sub">
-                Loopback drivers are well suited to routing audio wherever you
-                like.
-              </p>
-              <p>
-                Open Mic is not a tool for routing audio freely.
-                <strong
-                  >It turns your microphone and your Mac's audio into one
-                  input.</strong
-                >
-                That one thing, with nothing to configure.
-              </p>
-            </details>
-            <details>
-              <summary>Permissions it needs</summary>
-              <p>
-                <strong>Microphone</strong>, to capture your voice.
-                <strong>Screen Recording</strong>, to capture what your Mac is
-                playing.
-              </p>
-              <p>
-                Open Mic does not record your screen. macOS files system-audio
-                capture under Screen Recording, and there is no narrower
-                permission to ask for.
-              </p>
-            </details>
-            <details>
-              <summary>
-                When audio from the same browser is hard to pick up
-              </summary>
-              <p>
-                Browsers and calling apps have
-                <strong>echo cancellation</strong>, which stops sound coming out
-                of the speakers from getting back into the microphone.
-              </p>
-              <p>
-                Because of it, playing a video while transcribing in the same
-                browser leaves that playback much quieter in Open Mic's input.
-                Sometimes it still works; sometimes it stops being picked up. It
-                depends on the app.
-              </p>
-              <p>
-                If it stops being picked up, keep the side playing the audio and
-                the side using Open Mic in different browsers or apps. Play in
-                Safari and transcribe in Chrome, or play in a browser and
-                transcribe in a desktop app.
-              </p>
-              <p class="sub">
-                This is audio processing on the receiving side, so it cannot be
-                turned off from Open Mic's settings.
-              </p>
-            </details>
-            <details>
-              <summary>Which half is arriving</summary>
-              <p>The menu bar item is an audio level meter.</p>
-              <ul>
-                <li>Left bars: your microphone</li>
-                <li>Right bars: your Mac's audio</li>
-              </ul>
-              <p>
-                When nothing is coming through, it shows which half stopped.
-              </p>
-            </details>
-            <details>
-              <summary>Installing and removing it completely</summary>
-              <p>
-                Download and open the installer. Your Mac goes quiet for a
-                second or two during the install — not a good moment to be on a
-                call.
-              </p>
-              <p>To remove everything:</p>
-              <pre><code>sudo "/Library/Application Support/OpenMic/uninstall.sh"</code></pre>
-              <p class="sub">
-                Removes Open Mic and its files, then checks nothing was left
-                behind. The Microphone and Screen Recording entries stay in
-                System Settings; remove those by hand if you want to.
-              </p>
-            </details>
-            <details>
-              <summary>Supporting Open Mic</summary>
-              <p>
-                Open Mic is free and stays free. If it helped, you can support
-                it on
-                <a href="https://ko-fi.com/tkkrtky">Ko-fi</a>.
-              </p>
-            </details>
-            <details>
-              <summary>Reporting a problem</summary>
-              <p>
-                Report problems on
-                <a href="https://github.com/TKKRTKY/OpenMic/issues"
-                  >GitHub Issues</a
-                >. The app's <strong>Send Feedback</strong> item opens an issue
-                with the useful details already filled in, for you to read and
-                edit before posting.
-              </p>
-            </details>
-          </div>
+      <section id="faq">
+        <div class="wrap sec-head">
+          <div class="section-title"><h2>If you want the details.</h2></div>
+        </div>
+        <div class="wrap">
+          <details>
+            <summary>
+              Does Open Mic transcribe audio or generate AI answers?
+            </summary>
+            <p>
+              No. Open Mic combines your microphone and your Mac’s audio into
+              one microphone input. Transcription, summaries and answers are
+              provided by the AI app you choose as the destination.
+            </p>
+          </details>
+          <details>
+            <summary>Open Mic and manual audio routing</summary>
+            <div class="scroller">
+              <table>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Open Mic</th>
+                    <th>Manual routing</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Mixing mic and Mac audio</td>
+                    <td class="yes">Automatic</td>
+                    <td class="no">Configured by hand</td>
+                  </tr>
+                  <tr>
+                    <td>Changing your output device</td>
+                    <td class="yes">Not needed</td>
+                    <td class="no">Sometimes required</td>
+                  </tr>
+                  <tr>
+                    <td>Setting up again per meeting</td>
+                    <td class="yes">Not needed</td>
+                    <td class="no">Sometimes required</td>
+                  </tr>
+                  <tr>
+                    <td>Turning it on</td>
+                    <td class="yes">One switch</td>
+                    <td class="no">Several audio settings</td>
+                  </tr>
+                  <tr>
+                    <td>Removing it</td>
+                    <td class="yes">One command</td>
+                    <td class="no">Undo the settings by hand</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="sub">
+              Loopback drivers are well suited to routing audio wherever you
+              like.
+            </p>
+            <p>
+              Open Mic is not a tool for routing audio freely.
+              <strong
+                >It turns your microphone and your Mac's audio into one
+                input.</strong
+              >
+              That one thing, with nothing to configure.
+            </p>
+          </details>
+          <details>
+            <summary>Permissions it needs</summary>
+            <p>
+              <strong>Microphone</strong>, to capture your voice.
+              <strong>Screen Recording</strong>, to capture what your Mac is
+              playing.
+            </p>
+            <p>
+              Open Mic does not record your screen. macOS files system-audio
+              capture under Screen Recording, and there is no narrower
+              permission to ask for.
+            </p>
+          </details>
+          <details>
+            <summary>
+              When audio from the same browser is hard to pick up
+            </summary>
+            <p>
+              Browsers and calling apps have <strong>echo cancellation</strong>,
+              which stops sound coming out of the speakers from getting back
+              into the microphone.
+            </p>
+            <p>
+              Because of it, playing a video while transcribing in the same
+              browser leaves that playback much quieter in Open Mic's input.
+              Sometimes it still works; sometimes it stops being picked up. It
+              depends on the app.
+            </p>
+            <p>
+              If it stops being picked up, keep the side playing the audio and
+              the side using Open Mic in different browsers or apps. Play in
+              Safari and transcribe in Chrome, or play in a browser and
+              transcribe in a desktop app.
+            </p>
+            <p class="sub">
+              This is audio processing on the receiving side, so it cannot be
+              turned off from Open Mic's settings.
+            </p>
+          </details>
+          <details>
+            <summary>Which half is arriving</summary>
+            <p>The menu bar item is an audio level meter.</p>
+            <ul>
+              <li>Left bars: your microphone</li>
+              <li>Right bars: your Mac's audio</li>
+            </ul>
+            <p>When nothing is coming through, it shows which half stopped.</p>
+          </details>
+          <details>
+            <summary>Installing and removing it completely</summary>
+            <p>
+              Download and open the installer. Your Mac goes quiet for a second
+              or two during the install — not a good moment to be on a call.
+            </p>
+            <p>To remove everything:</p>
+            <pre><code>sudo "/Library/Application Support/OpenMic/uninstall.sh"</code></pre>
+            <p class="sub">
+              Removes Open Mic and its files, then checks nothing was left
+              behind. The Microphone and Screen Recording entries stay in System
+              Settings; remove those by hand if you want to.
+            </p>
+          </details>
+          <details>
+            <summary>Supporting Open Mic</summary>
+            <p>
+              Open Mic is free and stays free. If it helped, you can support it
+              on
+              <a href="https://ko-fi.com/tkkrtky">Ko-fi</a>.
+            </p>
+          </details>
+          <details>
+            <summary>Reporting a problem</summary>
+            <p>
+              Report problems on
+              <a href="https://github.com/TKKRTKY/OpenMic/issues"
+                >GitHub Issues</a
+              >. The app's <strong>Send Feedback</strong> item opens an issue
+              with the useful details already filled in, for you to read and
+              edit before posting.
+            </p>
+          </details>
         </div>
       </section>
-      <section class="end">
+      <section class="closing" id="download">
         <div class="wrap">
           <h2>Let your AI hear the whole conversation.</h2>
-          <a
-            class="cta"
-            href="https://github.com/TKKRTKY/OpenMic/releases/latest/download/OpenMic.pkg"
-            ><svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              aria-hidden="true"
+          <div class="actions">
+            <a
+              class="button"
+              href="https://github.com/TKKRTKY/OpenMic/releases/latest/download/OpenMic.pkg"
+              >Download Open Mic</a
             >
-              <path d="M12 3v12m-4-4 4 4 4-4M5 17v4h14v-4" /></svg
-            ><span>Download for macOS</span></a
-          >
-          <p class="meta">
-            Free <span>/</span> macOS 14.2+ <span>/</span> No account
-          </p>
+          </div>
+          <p class="meta">Free · macOS 14.2 or later · No account required</p>
         </div>
       </section>
     </main>
-    <footer class="wrap">
-      <div class="foot">
-        <a class="brand" href="./"
-          ><img
-            class="app-icon"
-            src="assets/icon.png"
-            width="32"
-            height="32"
-            alt=""
-          /><span>Open Mic</span></a
-        >
-        <nav class="footlinks" aria-label="More links">
-          <a href="https://github.com/TKKRTKY/OpenMic">GitHub</a
-          ><a href="https://github.com/TKKRTKY/OpenMic/issues"
-            >Report a problem</a
-          ><a href="https://ko-fi.com/tkkrtky">Support</a
-          ><a href="ja/" lang="ja">日本語</a>
-        </nav>
-      </div>
-    </footer>
+    <div class="wrap">
+      <footer>
+        <span>Open Mic</span>
+        <span>
+          <a href="https://github.com/TKKRTKY/OpenMic">GitHub</a> ·
+          <a href="https://github.com/TKKRTKY/OpenMic/issues">Feedback</a> ·
+          <a href="https://ko-fi.com/tkkrtky">Donate</a> ·
+          <a href="ja/">日本語</a>
+        </span>
+        <span class="motto">No AI inside. Built for AI.</span>
+      </footer>
+    </div>
   </body>
 </html>
