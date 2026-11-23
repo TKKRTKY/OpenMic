@@ -1,81 +1,166 @@
 <!doctype html>
-<meta charset="utf-8">
-<link rel="stylesheet" href="assets/site.css">
-<style>
-  /* The headline belongs here, where it is read large, and og:title is cut back
-     to the product name so it is not printed twice. Putting the weaker line on
-     the card to avoid the repetition had it the wrong way round. The panel
-     stays: it is the part no line of text underneath can show. */
-  html, body { width: 1200px; height: 630px; margin: 0; overflow: hidden; }
-  body {
-    background: var(--bg);
-    display: grid; grid-template-columns: 1fr auto;
-    align-items: center; gap: 48px;
-    padding: 0 56px 0 88px;
-  }
-  .brand { display: flex; align-items: center; gap: 20px; margin-bottom: 34px; }
-  .brand img { width: 78px; height: 78px; border-radius: 21px; display: block; }
-  .brand span { font-size: 40px; font-weight: 600; letter-spacing: -.02em; }
-  .line { height: 5px; width: 92px; background: var(--sage); border-radius: 3px; margin-bottom: 28px; }
-  .say { font-size: 48px; font-weight: 700; line-height: 1.22; letter-spacing: -.03em;
-         word-break: auto-phrase; }
-  .say .soft { color: var(--ink-soft); font-weight: 400; font-size: 23px;
-               display: block; margin-top: 18px; letter-spacing: 0;
-               white-space: nowrap; }
-  .shot { margin-right: 0; }
-  .mock { width: 470px; }
-  /* Bigger than on the site, because the card is looked at small. Scaling the
-     type rather than the box keeps the panel's own proportions. */
-  .mock .menu { max-width: 100%; font-size: 17px; padding: 18px; border-radius: 17px; }
-  .mock .menu .head { font-size: 18px; }
-  .mock .menu .head .ver { font-size: 14px; }
-  .mock .toggle { font-size: 16.5px; padding: 12px 16px; border-radius: 12px; }
-  .mock .status { font-size: 14px; }
-  .mock .level, .mock .opt, .mock .check, .mock .field, .mock .links { font-size: 15px; }
-  .mock .level .name { width: 108px; }
-  .mock .hint { font-size: 13.5px; }
-  .mock-menubar { font-size: 15px; padding: 9px 20px; }
-  .mock-menubar img { height: 22px; }
-  .mock-body { padding: 22px 24px 30px; }
-</style>
-<div>
-  <div class="brand"><img src="assets/icon.png" alt=""><span>Open Mic</span></div>
-  <div class="line"></div>
-  <p class="say" id="say"></p>
-</div>
-<div class="shot">
-  <div class="mock">
-    <div class="mock-menubar">
-      <img src="assets/menubar-item.png" alt="">
-      <span class="chip"></span><span class="chip"></span><span>14:32</span>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1200" />
+    <title>Open Mic — social preview</title>
+    <link rel="stylesheet" href="site.css?v=29" />
+    <style>
+      /* Render at 1200 × 630; ?lang=ja selects Japanese. */
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        margin: 0;
+        overflow: hidden;
+      }
+      body {
+        display: grid;
+        grid-template-columns: 1fr 410px;
+        gap: 56px;
+        align-items: center;
+        padding: 48px 56px;
+      }
+      .og-copy .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 23px;
+        font-weight: 600;
+        text-decoration: none;
+        margin-bottom: 36px;
+      }
+      .og-copy .brand img {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+      }
+      .og-copy h1 {
+        font-size: 52px;
+        line-height: 1.2;
+        font-weight: 500;
+        letter-spacing: -0.045em;
+        margin: 0 0 22px;
+      }
+      :lang(ja) .og-copy h1 {
+        font-size: 48px;
+        line-height: 1.35;
+      }
+      .og-copy .og-lede {
+        font-size: 18px;
+        line-height: 1.7;
+        color: var(--ink-soft);
+        margin: 0 0 24px;
+      }
+      .og-copy .meta {
+        font-size: 13px;
+        margin: 18px 0 0;
+      }
+      .og-product {
+        margin: 0;
+      }
+      .og-product figcaption {
+        font-size: 12px;
+        color: var(--ink-soft);
+        text-align: right;
+        margin-top: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="og-copy">
+      <a class="brand" href="https://tkkrtky.github.io/OpenMic/"
+        ><img src="icon.png" alt="" width="32" height="32" />Open Mic</a
+      >
+      <h1 id="og-headline">
+        Let your AI hear<br />the whole<br />conversation.
+      </h1>
+      <p class="og-lede" id="og-lede">
+        Your voice and your Mac’s audio.<br />One virtual microphone. No manual
+        routing.
+      </p>
+      <a
+        class="button"
+        id="og-download"
+        href="https://github.com/TKKRTKY/OpenMic/releases/latest/download/OpenMic.pkg"
+        >Download for macOS</a
+      >
+      <p class="meta" id="og-meta">Free / macOS 14.2+ / No account</p>
     </div>
-    <div class="mock-body">
-      <div class="menu">
-        <div class="head"><span>Open Mic</span><span class="ver">0.4.0 (5)</span></div>
-        <div class="sep"></div>
-        <div class="toggle"><span class="dot"></span>Turn Off</div>
-        <div class="status">Microphone + system audio</div>
-        <div class="levels">
-          <div class="level"><span class="name">Microphone</span><span class="track"><span class="fill" style="width:78%"></span></span></div>
-          <div class="level"><span class="name">System audio</span><span class="track"><span class="fill sage" style="width:52%"></span></span></div>
+    <figure class="og-product">
+      <div
+        aria-label="UI illustration: Open Mic running in the menu bar, showing separate levels for the microphone and the Mac's audio"
+        class="mock"
+        role="img"
+      >
+        <div class="mock-menubar">
+          <img alt="" src="menubar-item.png" />
+          <span class="chip"></span><span class="chip"></span><span>14:32</span>
         </div>
-        <div class="sep"></div>
-        <div class="field">Microphone source</div>
-        <div class="opt"><span class="tick"></span>System default</div>
-        <div class="opt sel"><span class="tick"></span>MacBook Pro Microphone</div>
-        <div class="check"><span class="box">☑</span>Open at Login</div>
-        <div class="sep"></div>
-        <div class="hint">Select “Open Mic” as the microphone in your AI app</div>
-        <div class="links"><span>Updates</span><span>Feedback</span><span class="end">Quit</span></div>
+        <div class="mock-body">
+          <div class="menu">
+            <div class="head">
+              <span>Open Mic</span><span class="ver">0.4.0 (5)</span>
+            </div>
+            <div class="sep"></div>
+            <div class="toggle"><span class="dot"></span>Turn Off</div>
+            <div class="status">Microphone + system audio</div>
+            <div class="levels">
+              <div class="level">
+                <span class="name">Microphone</span
+                ><span class="track"
+                  ><span class="fill" style="width: 78%"></span
+                ></span>
+              </div>
+              <div class="level">
+                <span class="name">System audio</span
+                ><span class="track"
+                  ><span class="fill sage" style="width: 52%"></span
+                ></span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="field">Microphone source</div>
+            <div class="opt"><span class="tick"></span>System default</div>
+            <div class="opt sel">
+              <span class="tick"></span>MacBook Pro Microphone
+            </div>
+            <div class="check"><span class="box">☑</span>Open at Login</div>
+            <div class="sep"></div>
+            <div class="hint">
+              Select “Open Mic” as the microphone in your AI app
+            </div>
+            <div class="links">
+              <span>Updates</span><span>Feedback</span
+              ><span class="end">Quit</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-<script>
-  const lang = new URLSearchParams(location.search).get("lang") || "en";
-  document.documentElement.lang = lang;
-  document.getElementById("say").innerHTML = {
-    en: 'Let your AI hear<br>the whole conversation.',
-    ja: 'AIに、会話の<br>ぜんぶを聞かせる。'
-  }[lang];
-</script>
+      <figcaption id="og-caption">
+        A small menu bar app for macOS. UI illustration.
+      </figcaption>
+    </figure>
+    <script>
+      if (new URLSearchParams(location.search).get("lang") === "ja") {
+        document.documentElement.lang = "ja";
+        document.getElementById("og-headline").innerHTML =
+          "AIに、会話の<br>ぜんぶを聞かせる。";
+        document.getElementById("og-lede").innerHTML =
+          "あなたの声と、Macから聞こえる声を、<br>ひとつの仮想マイクに。";
+        document.getElementById("og-download").textContent =
+          "macOS版をダウンロード";
+        document.getElementById("og-meta").textContent =
+          "無料 / macOS 14.2以降 / アカウント不要";
+        document.getElementById("og-caption").textContent =
+          "Macのメニューバーに、小さな道具を。操作イメージ。";
+        document
+          .querySelector(".mock")
+          .setAttribute(
+            "aria-label",
+            "Open Micのメニューバー表示の操作イメージ",
+          );
+      }
+    </script>
+  </body>
+</html>
