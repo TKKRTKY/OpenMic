@@ -1,0 +1,100 @@
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>ナレーションとアプリ音を入れて画面収録する | Open Mic</title>
+    <meta content="QuickTime Playerで、自分の解説とデモ中のアプリ音が入った画面収録を作ります。" name="description" />
+    <link href="../../../assets/icon-180.png" rel="icon" />
+    <link href="../../../assets/icon-180.png" rel="apple-touch-icon" />
+    <link href="../../../assets/site.css?v=29" rel="stylesheet" />
+    <link href="https://tkkrtky.github.io/OpenMic/ja/guides/screen-recording/" rel="canonical" />
+    <link href="https://tkkrtky.github.io/OpenMic/guides/screen-recording/" hreflang="en" rel="alternate" />
+    <link href="https://tkkrtky.github.io/OpenMic/ja/guides/screen-recording/" hreflang="ja" rel="alternate" />
+    <link href="https://tkkrtky.github.io/OpenMic/guides/screen-recording/" hreflang="x-default" rel="alternate" />
+    <meta content="article" property="og:type" />
+    <meta content="Open Mic" property="og:site_name" />
+    <meta content="https://tkkrtky.github.io/OpenMic/ja/guides/screen-recording/" property="og:url" />
+    <meta content="ja_JP" property="og:locale" />
+    <meta content="en_US" property="og:locale:alternate" />
+    <meta content="ナレーションとアプリ音を入れて画面収録する" property="og:title" />
+    <meta content="QuickTime Playerで、自分の解説とデモ中のアプリ音が入った画面収録を作ります。" property="og:description" />
+    <meta content="https://tkkrtky.github.io/OpenMic/assets/og-ja.png" property="og:image" />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
+    <meta content="AIに、会話のぜんぶを聞かせる。— 自分の声とMacから聞こえる声を、Open Micでひとつの音声入力に。" property="og:image:alt" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="ナレーションとアプリ音を入れて画面収録する" name="twitter:title" />
+    <meta content="QuickTime Playerで、自分の解説とデモ中のアプリ音が入った画面収録を作ります。" name="twitter:description" />
+    <meta content="https://tkkrtky.github.io/OpenMic/assets/og-ja.png" name="twitter:image" />
+  </head>
+  <body>
+    <a class="skip" href="#main">本文へスキップ</a>
+    <header class="wrap">
+      <div class="top">
+        <a class="brand" href="../../"><img alt="" src="../../../assets/icon.png" />Open Mic</a>
+        <div class="top-actions">
+          <nav aria-label="言語" class="lang">
+            <a href="../../../guides/screen-recording/" hreflang="en" lang="en">English</a>
+            <a aria-current="page" href="./" hreflang="ja" lang="ja">日本語</a>
+          </nav>
+          <a
+            class="button header-download"
+            href="https://github.com/TKKRTKY/OpenMic/releases/latest/download/OpenMic.pkg"
+            >ダウンロード</a
+          >
+        </div>
+      </div>
+    </header>
+    <main class="wrap" id="main">
+      <article class="narrow">
+        <section aria-labelledby="guide-title">
+          <p class="eyebrow"><a href="../">ガイド一覧</a></p>
+          <h1 id="guide-title">ナレーションとアプリ音を入れて画面収録する</h1>
+          <p>QuickTime Playerで、自分の解説とデモ中のアプリ音が入った画面収録を作ります。</p>
+        </section>
+        <section aria-labelledby="who">
+          <h2 id="who">こんなときに</h2>
+          <p>再生ボタンの使い方や効果音など、画面だけでは伝わりにくい操作を解説するときに。</p>
+        </section>
+        <section aria-labelledby="requirements">
+          <h2 id="requirements">必要なもの</h2>
+          <p>macOS 14.2以降のMac、Open Mic、QuickTime Player、物理マイクが必要です。再生音が物理マイクに回り込まないよう、ヘッドホンを使います。</p>
+          <p><a href="../../#setup">Open Micのセットアップ</a></p>
+        </section>
+        <section aria-labelledby="steps">
+          <h2 id="steps">手順</h2>
+          <ol>
+            <li>メニューバーでOpen Micをオンにします。</li>
+            <li>QuickTime Playerで<strong>「ファイル」→「新規画面収録」</strong>を選びます。収録コントロールの<strong>「オプション」→「マイク」</strong>で<strong>Open Mic</strong>を選び、収録範囲を指定します。</li>
+            <li>短いテスト収録で、声を出してアプリの音も鳴らします。収録を止めて再生し、両方の音を確認します。本番の収録と保存はQuickTime Playerで行います。</li>
+          </ol>
+          <p>使い終わったらOpen Micをオフにします。</p>
+        </section>
+        <section aria-labelledby="tips">
+          <h2 id="tips">うまくいかないとき</h2>
+          <p>音が入らないときは、Open MicのメニューとmacOSの「プライバシーとセキュリティ」で、マイクとシステム音声収録の権限を確認します。後者は「画面収録」の項目にある場合があります。メニューバーの左のメーターはマイク、右はMacの再生音です。</p>
+          <p>ほかのアプリのエコー除去は、Open Micからは解除できません。</p>
+          <p>通知音や無関係なアプリ音は収録前に止めます。画面の収録範囲を指定しても、Open Micが取り込むMacの再生音は絞られません。通話アプリのデモなら、エコー除去で聞こえ方が変わっていないかも試します。</p>
+        </section>
+        <section aria-labelledby="limits">
+          <h2 id="limits">できないこと</h2>
+          <p>画面を収録して保存するのはQuickTime Playerです。Open Micはミックスしたモノラル音声をひとつ渡すだけで、解説とアプリ音を別々のトラックにはできません。画面収録そのものにmacOSが権限を求めたら、Open Micのシステム音声収録とは別に許可します。</p>
+        </section>
+      </article>
+    </main>
+    <div class="wrap">
+      <footer>
+        <span>Open Mic</span>
+        <span>
+          <a href="https://github.com/TKKRTKY/OpenMic">GitHub</a> ·
+          <a href="https://github.com/TKKRTKY/OpenMic/issues">フィードバック</a> ·
+          <a href="https://ko-fi.com/tkkrtky">支援</a> ·
+          <a href="../../../guides/screen-recording/" hreflang="en" lang="en">English</a>
+        </span>
+        <span class="motto">No AI inside. Built for AI.</span>
+      </footer>
+    </div>
+  </body>
+</html>

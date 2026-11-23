@@ -1,0 +1,100 @@
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Macで再生している音についてAIに話しかける | Open Mic</title>
+    <meta content="動画やデモの音をAIに聞かせて、内容を説明し直さずに質問します。" name="description" />
+    <link href="../../../assets/icon-180.png" rel="icon" />
+    <link href="../../../assets/icon-180.png" rel="apple-touch-icon" />
+    <link href="../../../assets/site.css?v=29" rel="stylesheet" />
+    <link href="https://tkkrtky.github.io/OpenMic/ja/guides/ai-voice-assistant/" rel="canonical" />
+    <link href="https://tkkrtky.github.io/OpenMic/guides/ai-voice-assistant/" hreflang="en" rel="alternate" />
+    <link href="https://tkkrtky.github.io/OpenMic/ja/guides/ai-voice-assistant/" hreflang="ja" rel="alternate" />
+    <link href="https://tkkrtky.github.io/OpenMic/guides/ai-voice-assistant/" hreflang="x-default" rel="alternate" />
+    <meta content="article" property="og:type" />
+    <meta content="Open Mic" property="og:site_name" />
+    <meta content="https://tkkrtky.github.io/OpenMic/ja/guides/ai-voice-assistant/" property="og:url" />
+    <meta content="ja_JP" property="og:locale" />
+    <meta content="en_US" property="og:locale:alternate" />
+    <meta content="Macで再生している音についてAIに話しかける" property="og:title" />
+    <meta content="動画やデモの音をAIに聞かせて、内容を説明し直さずに質問します。" property="og:description" />
+    <meta content="https://tkkrtky.github.io/OpenMic/assets/og-ja.png" property="og:image" />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
+    <meta content="AIに、会話のぜんぶを聞かせる。— 自分の声とMacから聞こえる声を、Open Micでひとつの音声入力に。" property="og:image:alt" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="Macで再生している音についてAIに話しかける" name="twitter:title" />
+    <meta content="動画やデモの音をAIに聞かせて、内容を説明し直さずに質問します。" name="twitter:description" />
+    <meta content="https://tkkrtky.github.io/OpenMic/assets/og-ja.png" name="twitter:image" />
+  </head>
+  <body>
+    <a class="skip" href="#main">本文へスキップ</a>
+    <header class="wrap">
+      <div class="top">
+        <a class="brand" href="../../"><img alt="" src="../../../assets/icon.png" />Open Mic</a>
+        <div class="top-actions">
+          <nav aria-label="言語" class="lang">
+            <a href="../../../guides/ai-voice-assistant/" hreflang="en" lang="en">English</a>
+            <a aria-current="page" href="./" hreflang="ja" lang="ja">日本語</a>
+          </nav>
+          <a
+            class="button header-download"
+            href="https://github.com/TKKRTKY/OpenMic/releases/latest/download/OpenMic.pkg"
+            >ダウンロード</a
+          >
+        </div>
+      </div>
+    </header>
+    <main class="wrap" id="main">
+      <article class="narrow">
+        <section aria-labelledby="guide-title">
+          <p class="eyebrow"><a href="../">ガイド一覧</a></p>
+          <h1 id="guide-title">Macで再生している音についてAIに話しかける</h1>
+          <p>動画やデモの音をAIに聞かせて、内容を説明し直さずに質問します。</p>
+        </section>
+        <section aria-labelledby="who">
+          <h2 id="who">こんなときに</h2>
+          <p>動画を一時停止して、いま聞こえたことについて質問したいときに。再生音と自分の質問を同じ入力でAIに渡せます。</p>
+        </section>
+        <section aria-labelledby="requirements">
+          <h2 id="requirements">必要なもの</h2>
+          <p>macOS 14.2以降のMac、Open Mic、物理マイク、Open Micを音声入力に選べるAIアシスタントが必要です。Claudeでは両方の音が届くことを確認しています。</p>
+          <p><a href="../../#setup">Open Micのセットアップ</a></p>
+        </section>
+        <section aria-labelledby="steps">
+          <h2 id="steps">手順</h2>
+          <ol>
+            <li>動画などの音源を、AIとは別のアプリかブラウザーで開きます。</li>
+            <li>メニューバーでOpen Micをオンにし、AIアシスタントの音声入力に<strong>Open Mic</strong>を選びます。</li>
+            <li>数秒再生してから一時停止し、音声に出てきた具体的なことを質問します。再生音と自分の質問の両方が届いたかを確かめてから続けます。</li>
+          </ol>
+          <p>使い終わったらOpen Micをオフにします。</p>
+        </section>
+        <section aria-labelledby="tips">
+          <h2 id="tips">うまくいかないとき</h2>
+          <p>音が入らないときは、Open MicのメニューとmacOSの「プライバシーとセキュリティ」で、マイクとシステム音声収録の権限を確認します。後者は「画面収録」の項目にある場合があります。メニューバーの左のメーターはマイク、右はMacの再生音です。</p>
+          <p>受け側のエコー除去で再生音が弱まる場合は、再生と取り込みを別のアプリやブラウザーに分けて試します。この処理はOpen Micからは解除できません。ヘッドホンを使うと、再生音が物理マイクに回り込みにくくなります。</p>
+          <p>AIが音声で答える場合は、返答中にAI側の入力を止めるかミュートし、返答を同じセッションに戻さないようにします。</p>
+        </section>
+        <section aria-labelledby="limits">
+          <h2 id="limits">できないこと</h2>
+          <p>ChatGPTでOpen Micを選び、発話は文字起こしされたものの、Macの再生音は届かなかった事例があります。原因や、他のバージョンでも同じかどうかは確認されていません。Open Micが渡すのは音声だけです。画面共有や内容の解釈、音声での返答は行いません。</p>
+        </section>
+      </article>
+    </main>
+    <div class="wrap">
+      <footer>
+        <span>Open Mic</span>
+        <span>
+          <a href="https://github.com/TKKRTKY/OpenMic">GitHub</a> ·
+          <a href="https://github.com/TKKRTKY/OpenMic/issues">フィードバック</a> ·
+          <a href="https://ko-fi.com/tkkrtky">支援</a> ·
+          <a href="../../../guides/ai-voice-assistant/" hreflang="en" lang="en">English</a>
+        </span>
+        <span class="motto">No AI inside. Built for AI.</span>
+      </footer>
+    </div>
+  </body>
+</html>

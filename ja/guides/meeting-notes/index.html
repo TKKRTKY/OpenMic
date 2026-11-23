@@ -1,0 +1,100 @@
+<!doctype html>
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>会議の両側の音声を議事録に残す | Open Mic</title>
+    <meta content="自分の声と通話相手の声を、別の議事録・文字起こしアプリにまとめて渡します。" name="description" />
+    <link href="../../../assets/icon-180.png" rel="icon" />
+    <link href="../../../assets/icon-180.png" rel="apple-touch-icon" />
+    <link href="../../../assets/site.css?v=29" rel="stylesheet" />
+    <link href="https://tkkrtky.github.io/OpenMic/ja/guides/meeting-notes/" rel="canonical" />
+    <link href="https://tkkrtky.github.io/OpenMic/guides/meeting-notes/" hreflang="en" rel="alternate" />
+    <link href="https://tkkrtky.github.io/OpenMic/ja/guides/meeting-notes/" hreflang="ja" rel="alternate" />
+    <link href="https://tkkrtky.github.io/OpenMic/guides/meeting-notes/" hreflang="x-default" rel="alternate" />
+    <meta content="article" property="og:type" />
+    <meta content="Open Mic" property="og:site_name" />
+    <meta content="https://tkkrtky.github.io/OpenMic/ja/guides/meeting-notes/" property="og:url" />
+    <meta content="ja_JP" property="og:locale" />
+    <meta content="en_US" property="og:locale:alternate" />
+    <meta content="会議の両側の音声を議事録に残す" property="og:title" />
+    <meta content="自分の声と通話相手の声を、別の議事録・文字起こしアプリにまとめて渡します。" property="og:description" />
+    <meta content="https://tkkrtky.github.io/OpenMic/assets/og-ja.png" property="og:image" />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
+    <meta content="AIに、会話のぜんぶを聞かせる。— 自分の声とMacから聞こえる声を、Open Micでひとつの音声入力に。" property="og:image:alt" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="会議の両側の音声を議事録に残す" name="twitter:title" />
+    <meta content="自分の声と通話相手の声を、別の議事録・文字起こしアプリにまとめて渡します。" name="twitter:description" />
+    <meta content="https://tkkrtky.github.io/OpenMic/assets/og-ja.png" name="twitter:image" />
+  </head>
+  <body>
+    <a class="skip" href="#main">本文へスキップ</a>
+    <header class="wrap">
+      <div class="top">
+        <a class="brand" href="../../"><img alt="" src="../../../assets/icon.png" />Open Mic</a>
+        <div class="top-actions">
+          <nav aria-label="言語" class="lang">
+            <a href="../../../guides/meeting-notes/" hreflang="en" lang="en">English</a>
+            <a aria-current="page" href="./" hreflang="ja" lang="ja">日本語</a>
+          </nav>
+          <a
+            class="button header-download"
+            href="https://github.com/TKKRTKY/OpenMic/releases/latest/download/OpenMic.pkg"
+            >ダウンロード</a
+          >
+        </div>
+      </div>
+    </header>
+    <main class="wrap" id="main">
+      <article class="narrow">
+        <section aria-labelledby="guide-title">
+          <p class="eyebrow"><a href="../">ガイド一覧</a></p>
+          <h1 id="guide-title">会議の両側の音声を議事録に残す</h1>
+          <p>自分の声と通話相手の声を、別の議事録・文字起こしアプリにまとめて渡します。</p>
+        </section>
+        <section aria-labelledby="who">
+          <h2 id="who">こんなときに</h2>
+          <p>マイク入力をひとつしか選べず、そのままでは自分の声しか届かない文字起こしツールを使うときに。</p>
+        </section>
+        <section aria-labelledby="requirements">
+          <h2 id="requirements">必要なもの</h2>
+          <p>macOS 14.2以降のMac、Open Mic、物理マイク、ZoomやGoogle Meetなどの会議アプリ、入力を選べる別の議事録・文字起こしアプリが必要です。音声を外部サービスに渡す前に参加者に伝え、必要な同意を得てください。</p>
+          <p><a href="../../#setup">Open Micのセットアップ</a></p>
+        </section>
+        <section aria-labelledby="steps">
+          <h2 id="steps">手順</h2>
+          <ol>
+            <li>会議アプリでは<strong>物理マイク</strong>と普段の音声出力を使います。会議アプリのマイクにOpen Micは選びません。</li>
+            <li>メニューバーでOpen Micをオンにし、別に開いた議事録・文字起こしアプリのマイク入力に<strong>Open Mic</strong>を選びます。</li>
+            <li>短いテスト通話で、自分と相手の発話が両方とも文字起こしされるかを確認します。本番の文字起こしは、受け側のアプリで開始・終了します。</li>
+          </ol>
+          <p>使い終わったらOpen Micをオフにします。</p>
+        </section>
+        <section aria-labelledby="tips">
+          <h2 id="tips">うまくいかないとき</h2>
+          <p>音が入らないときは、Open MicのメニューとmacOSの「プライバシーとセキュリティ」で、マイクとシステム音声収録の権限を確認します。後者は「画面収録」の項目にある場合があります。メニューバーの左のメーターはマイク、右はMacの再生音です。</p>
+          <p>受け側のエコー除去で再生音が弱まる場合は、再生と取り込みを別のアプリやブラウザーに分けて試します。この処理はOpen Micからは解除できません。ヘッドホンを使うと、再生音が物理マイクに回り込みにくくなります。</p>
+          <p>文字起こしに無関係な音が入らないよう、会議の前に不要なアプリ音や通知音を止めます。</p>
+        </section>
+        <section aria-labelledby="limits">
+          <h2 id="limits">できないこと</h2>
+          <p>音声は議事録アプリに渡すだけで、AIの音声を会議に返す機能ではありません。Open Micは録音・文字起こし・話者の識別を行いません。話者ラベルや保存、アップロードの扱いは受け側のアプリによります。</p>
+        </section>
+      </article>
+    </main>
+    <div class="wrap">
+      <footer>
+        <span>Open Mic</span>
+        <span>
+          <a href="https://github.com/TKKRTKY/OpenMic">GitHub</a> ·
+          <a href="https://github.com/TKKRTKY/OpenMic/issues">フィードバック</a> ·
+          <a href="https://ko-fi.com/tkkrtky">支援</a> ·
+          <a href="../../../guides/meeting-notes/" hreflang="en" lang="en">English</a>
+        </span>
+        <span class="motto">No AI inside. Built for AI.</span>
+      </footer>
+    </div>
+  </body>
+</html>
