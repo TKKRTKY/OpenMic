@@ -1240,6 +1240,47 @@ footer {
 .step .num {
   color: var(--accent);
 }
+.beta-notice {
+  margin: 0;
+  padding: 10px 0;
+  border-block: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+.beta-notice a {
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+.beta-brand {
+  text-decoration: none;
+}
+.beta-hero {
+  align-items: center;
+  padding-bottom: 48px;
+}
+.beta-preview {
+  display: grid;
+  min-height: 280px;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 24px;
+  background: var(--menubar);
+  color: var(--ink-soft);
+  text-align: center;
+  font-size: 14px;
+}
+.hero .beta-preview {
+  max-width: none;
+}
+.beta-setup {
+  padding: 40px 0 48px;
+  border-top: 1px solid var(--rule);
+}
+.beta-setup h2 {
+  margin: 0;
+}
 .flow .node.primary {
   background: var(--accent);
   border-color: var(--accent);
