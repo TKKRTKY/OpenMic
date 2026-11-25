@@ -4,14 +4,14 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Open Mic 0.5.0 Beta 1 — AIも、会議で話せるように。</title>
+    <title>Open Mic 0.5.0 Beta 1 — あなたの声とMacの音を、AIへ。</title>
     <meta
       content="会議の音声をAIに届け、AIの声を会議に届ける。macOS 14.2以降向けのOpen Mic 0.5.0 Beta 1。"
       name="description"
     />
     <link href="../../assets/icon-180.png" rel="icon" />
     <link href="../../assets/icon-180.png" rel="apple-touch-icon" />
-    <link href="../../assets/site.css?v=30" rel="stylesheet" />
+    <link href="../../assets/site.css?v=31" rel="stylesheet" />
     <link href="https://tkkrtky.github.io/OpenMic/ja/beta/" rel="canonical" />
     <link href="https://tkkrtky.github.io/OpenMic/beta/" hreflang="en" rel="alternate" />
     <link href="https://tkkrtky.github.io/OpenMic/ja/beta/" hreflang="ja" rel="alternate" />
@@ -47,37 +47,83 @@
     <main class="wrap" id="main">
       <div aria-labelledby="headline" class="hero beta-hero">
         <div class="hero-copy">
-          <p class="eyebrow">Open Mic 0.5.0 Beta 1</p>
-          <h1 id="headline">AIも、会議で話せるように。</h1>
+          <p class="eyebrow">macOS 14.2以降 · 0.5.0 Beta 1</p>
+          <h1 id="headline">あなたの声とMacの音を、AIへ。</h1>
           <p class="lede">
-            会議の音声をAIに、AIの声を会議の参加者に。あなたの声は、どちらにも届きます。
+            Open Micは、マイクとMacで再生している音をまとめて、AIアプリのマイク入力へ届けるメニューバーアプリです。Beta 1では、会議の声をAIへ、AIの声を会議へ渡すための専用入力も使えます。
           </p>
           <div class="actions">
-            <a class="button" href="https://github.com/TKKRTKY/OpenMic/releases">GitHubでベータ版を見る</a>
+            <a class="button" href="https://github.com/TKKRTKY/OpenMic/releases">Beta 1の公開情報を見る</a>
           </div>
-          <p class="meta">プレリリース · macOS 14.2以降</p>
+          <p class="meta">Beta 1は公開準備中です。配布開始後、このページからご案内します。</p>
         </div>
-        <figure class="mock beta-preview">
-          <img alt="Open Micのアプリアイコン" height="128" src="../../assets/icon.png" width="128" />
-          <figcaption>ベータ版のスクリーンショットは後日掲載します。</figcaption>
+        <figure class="beta-preview">
+          <img alt="Open MicのON時のUIイメージ。Turn Offボタン、マイク選択、2本のBalanceバー。" height="290" src="../../assets/beta/panel-on.png" width="292" />
+          <figcaption>
+            大きなボタンでON/OFF。使うマイクと音のバランスも、同じパネルで調整できます。
+            <small>画面はUIイメージです。Mac実機での動作確認を示すものではありません。</small>
+          </figcaption>
         </figure>
       </div>
 
       <section aria-labelledby="setup" class="beta-setup">
         <div class="sec-head split-head">
-          <h2 id="setup">設定方法</h2>
+          <h2 id="setup">準備ができたら、使うときは2ステップ。</h2>
           <div class="section-copy">
+            <p>初回はOpen Micとオーディオドライバをインストールし、マイク・システム音声の利用に必要な権限を許可してください。</p>
+            <ol>
+              <li>メニューバーでOpen Micを開き、<strong>Turn On</strong>。</li>
+              <li>AIアプリのマイク入力で <strong>Open Mic</strong> を選択。</li>
+            </ol>
+            <p>使い終わったら <strong>Turn Off</strong>。通常の「Open Mic」入力はインストール後も残り、OFF中は音を送りません。手作業のオーディオ配線は不要です。</p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="routing" class="beta-setup">
+        <div class="sec-head split-head">
+          <div class="section-copy">
+            <h2 id="routing">会議の声を、AIへ。AIの声を、会議へ。</h2>
             <p>
-              メニューバーで<strong>AI in your meeting</strong>を開きます。
-              <strong>AI app</strong>と<strong>Meeting app</strong>を選び、<strong>Turn On</strong>を押します。
+              双方向で使うときだけ、<strong>AI in your meeting</strong> を開き、<strong>AI app</strong> と <strong>Meeting app</strong> を選びます。次に、それぞれのアプリ内で対応するマイク入力を選んでください。Open Micが各アプリのマイク設定を勝手に変更することはありません。
             </p>
+            <div aria-label="マイク入力の一覧" class="scroller" role="region" tabindex="0">
+              <table>
+                <thead>
+                  <tr><th scope="col">どこで選ぶ？</th><th scope="col">マイク入力名</th><th scope="col">届ける音</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>基本利用のAIアプリ</td><td>Open Mic</td><td>自分のマイク＋Macの再生音※</td></tr>
+                  <tr><td>双方向利用のAIアプリ</td><td>Open Mic › AI</td><td>自分のマイク＋選んだ会議アプリの音</td></tr>
+                  <tr><td>双方向利用の会議アプリ</td><td>Open Mic › Meeting</td><td>自分のマイク＋選んだAIアプリの音</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="meta">※Meeting appを選んだ場合、従来の「Open Mic」も、選んだ会議アプリの音＋自分のマイクを届けます。</p>
+            <p>AIの再生音をAI自身へ、会議の再生音を同じ会議へ戻さない経路です。自分のマイク音声は両方に届きます。</p>
             <p>
-              AIアプリのマイクに<strong>Open Mic › AI</strong>を選ぶと、あなたの声と会議の音声がAIに届きます。
-              会議アプリのマイクに<strong>Open Mic › Meeting</strong>を選ぶと、あなたの声とAIの音声が会議に届きます。
+              AIと会議は別々のアプリ、または別々のブラウザで開いてください。同じブラウザの別タブでは分けられません。専用の2入力は、別々のAI app・Meeting appを設定してOpen Micが音を供給している間に使えます。入力が見つからない場合は、設定・ONを確認して利用先のアプリを再起動してください。
             </p>
+          </div>
+          <figure class="beta-preview">
+            <img alt="双方向設定のUIイメージ。AI appとMeeting app、その下に各アプリで選ぶ専用入力名。" height="376" src="../../assets/beta/panel-pair-expanded.png" width="292" />
+            <figcaption>
+              追加設定は必要なときだけ。それぞれのアプリで選ぶ入力名を、設定欄のすぐ下に表示します。
+              <small>画面はUIイメージです。Mac実機での動作確認を示すものではありません。SafariとGoogle Chromeは例示で、動作確認済みの組み合わせではありません。</small>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="beta-note" class="beta-setup">
+        <div class="sec-head split-head">
+          <h2 id="beta-note">まずは、試せる環境で。</h2>
+          <div class="section-copy">
+            <p>Beta版です。実際の会議での動作や、ブラウザ側の音声処理による音質への影響は未検証です。大切な会議で使う前に、相手に届く音を確認してください。</p>
             <p>
-              AIと会議は別々のアプリで開いてください。両方をブラウザで使う場合は、同じブラウザの別タブではなく、別々のブラウザを使ってください。
+              ONはOpen Mic側の音声供給状態、Enabledは専用入力の公開状態です。どちらも、相手が音を受け取れていることの確認ではありません。
             </p>
+            <p>Open Mic自体に、録音・文字起こし・AIの自動操作機能はありません。</p>
           </div>
         </div>
       </section>

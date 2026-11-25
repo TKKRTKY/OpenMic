@@ -4,14 +4,14 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Open Mic 0.5.0 Beta 1 — Give your AI a voice in the meeting</title>
+    <title>Open Mic 0.5.0 Beta 1 — Send your voice and your Mac’s audio to AI</title>
     <meta
       content="Send your AI’s voice into a meeting and let it hear the meeting in return. Open Mic 0.5.0 Beta 1 for macOS 14.2 or later."
       name="description"
     />
     <link href="../assets/icon-180.png" rel="icon" />
     <link href="../assets/icon-180.png" rel="apple-touch-icon" />
-    <link href="../assets/site.css?v=30" rel="stylesheet" />
+    <link href="../assets/site.css?v=31" rel="stylesheet" />
     <link href="https://tkkrtky.github.io/OpenMic/beta/" rel="canonical" />
     <link href="https://tkkrtky.github.io/OpenMic/beta/" hreflang="en" rel="alternate" />
     <link href="https://tkkrtky.github.io/OpenMic/ja/beta/" hreflang="ja" rel="alternate" />
@@ -47,42 +47,117 @@
     <main class="wrap" id="main">
       <div aria-labelledby="headline" class="hero beta-hero">
         <div class="hero-copy">
-          <p class="eyebrow">Open Mic 0.5.0 Beta 1</p>
-          <h1 id="headline">Give your AI a voice in the meeting.</h1>
+          <p class="eyebrow">macOS 14.2 or later · 0.5.0 Beta 1</p>
+          <h1 id="headline">Send your voice and your Mac’s audio to AI.</h1>
           <p class="lede">
-            Let your AI hear the meeting, and let the people in the meeting
-            hear your AI. Your microphone goes to both.
+            Open Mic is a menu bar app that combines your microphone with the
+            audio playing on your Mac and sends both to your AI app’s mic input.
+            Beta 1 adds dedicated inputs so your AI can hear the meeting and
+            people in the meeting can hear your AI.
           </p>
           <div class="actions">
-            <a class="button" href="https://github.com/TKKRTKY/OpenMic/releases">Beta releases on GitHub</a>
+            <a class="button" href="https://github.com/TKKRTKY/OpenMic/releases">See Beta 1 release information</a>
           </div>
-          <p class="meta">Pre-release · macOS 14.2 or later</p>
+          <p class="meta">Beta 1 isn’t available yet. We’ll update this page when it’s released.</p>
         </div>
-        <figure class="mock beta-preview">
-          <img alt="Open Mic app icon" height="128" src="../assets/icon.png" width="128" />
-          <figcaption>Beta screenshot coming soon.</figcaption>
+        <figure class="beta-preview">
+          <img alt="UI illustration of Open Mic when on, showing Turn Off, the microphone picker, and two Balance bars." height="290" src="../assets/beta/panel-on.png" width="292" />
+          <figcaption>
+            Turn Open Mic on or off with the large button. Choose your microphone
+            and adjust the mix in the same panel.
+            <small>UI illustration only. It does not show testing on a Mac.</small>
+          </figcaption>
         </figure>
       </div>
 
       <section aria-labelledby="setup" class="beta-setup">
         <div class="sec-head split-head">
-          <h2 id="setup">Set up both directions.</h2>
+          <h2 id="setup">Once you’re set up, just two steps.</h2>
           <div class="section-copy">
             <p>
-              In the menu bar, open <strong>AI in your meeting</strong>.
-              Choose an <strong>AI app</strong> and a <strong>Meeting app</strong>,
-              then click <strong>Turn On</strong>.
+              First, install Open Mic and its audio driver, then grant the
+              required microphone and system audio permissions.
+            </p>
+            <ol>
+              <li>Open Open Mic from the menu bar and click <strong>Turn On</strong>.</li>
+              <li>In your AI app, choose <strong>Open Mic</strong> as the microphone input.</li>
+            </ol>
+            <p>
+              Click <strong>Turn Off</strong> when you’re done. The standard Open Mic
+              input stays installed but sends no audio while off. No manual
+              audio routing is needed.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="routing" class="beta-setup">
+        <div class="sec-head split-head">
+          <div class="section-copy">
+            <h2 id="routing">Let AI hear the meeting and speak in it.</h2>
+            <p>
+              For two-way audio, open <strong>AI in your meeting</strong> and choose
+              an <strong>AI app</strong> and a <strong>Meeting app</strong>. Then select
+              the matching microphone input in each app. Open Mic doesn’t change
+              either app’s microphone setting for you.
+            </p>
+            <div aria-label="Microphone input options" class="scroller" role="region" tabindex="0">
+              <table>
+                <thead>
+                  <tr><th scope="col">Where to select it</th><th scope="col">Microphone input</th><th scope="col">Audio it sends</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>AI app (basic use)</td><td>Open Mic</td><td>Your mic + audio playing on your Mac*</td></tr>
+                  <tr><td>AI app (two-way)</td><td>Open Mic › AI</td><td>Your mic + audio from the selected meeting app</td></tr>
+                  <tr><td>Meeting app (two-way)</td><td>Open Mic › Meeting</td><td>Your mic + audio from the selected AI app</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="meta">
+              *When you select a Meeting app, the standard Open Mic input also
+              sends just your mic and the audio from that meeting app.
             </p>
             <p>
-              In the AI app, select <strong>Open Mic › AI</strong> as the microphone
-              to send it your voice and the meeting audio. In the meeting app,
-              select <strong>Open Mic › Meeting</strong> to send it your voice and
-              the AI’s audio.
+              These routes don’t send the AI app’s playback back to the AI app,
+              or the meeting app’s playback back to the meeting app. Your mic
+              goes to both.
             </p>
             <p>
-              Use two different apps. If both are on the web, use separate
-              browsers, not two tabs in the same browser.
+              Run the AI and the meeting in different apps or browsers, not in
+              separate tabs of the same browser. The two dedicated inputs are
+              available while Open Mic is supplying audio and the AI app and
+              Meeting app are different. If an input is missing, check your app
+              selections, make sure Open Mic is on, and restart the app that needs
+              the input.
             </p>
+          </div>
+          <figure class="beta-preview">
+            <img alt="UI illustration of two-way setup. AI app and Meeting app each show the dedicated microphone input to select." height="376" src="../assets/beta/panel-pair-expanded.png" width="292" />
+            <figcaption>
+              Set this up only when you need it. The input to select in each app
+              appears directly below its picker.
+              <small>UI illustration only. It does not show testing on a Mac. Safari and Google Chrome are examples, not a tested combination.</small>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="beta-note" class="beta-setup">
+        <div class="sec-head split-head">
+          <h2 id="beta-note">Try it before an important meeting.</h2>
+          <div class="section-copy">
+            <p>
+              This is a beta. It hasn’t been tested in real meetings, and
+              the effect of browser audio processing on sound quality hasn’t
+              been verified. Check what other participants can hear before
+              relying on it in an important meeting.
+            </p>
+            <p>
+              ON means Open Mic is supplying audio. Enabled means the dedicated
+              inputs are available. Neither confirms that the other side is
+              receiving audio.
+            </p>
+            <p>Open Mic itself doesn’t record, transcribe, or automate your AI.</p>
           </div>
         </div>
       </section>
